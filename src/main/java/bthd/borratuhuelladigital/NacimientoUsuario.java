@@ -16,6 +16,9 @@ public class NacimientoUsuario extends javax.swing.JFrame {
      */
     public NacimientoUsuario() {
         initComponents();
+        spFechaNacimiento.setModel(new javax.swing.SpinnerDateModel());
+        javax.swing.JSpinner.DateEditor dateEditor = new javax.swing.JSpinner.DateEditor(spFechaNacimiento, "dd/MM/yyyy");
+        spFechaNacimiento.setEditor(dateEditor);
     }
 
     /**
@@ -28,19 +31,15 @@ public class NacimientoUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        tfFechaNacimiento = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnSiguiente3 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        spFechaNacimiento = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(4, 36, 54));
-
-        tfFechaNacimiento.setBackground(new java.awt.Color(4, 48, 54));
-        tfFechaNacimiento.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        tfFechaNacimiento.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Swis721 Cn BT", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 255, 255));
@@ -64,6 +63,8 @@ public class NacimientoUsuario extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Fecha de nacimiento");
 
+        spFechaNacimiento.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -71,14 +72,14 @@ public class NacimientoUsuario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfFechaNacimiento)
                     .addComponent(btnSiguiente3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(spFechaNacimiento))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -90,9 +91,9 @@ public class NacimientoUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(spFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnSiguiente3)
                 .addContainerGap(378, Short.MAX_VALUE))
         );
@@ -116,10 +117,46 @@ public class NacimientoUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSiguiente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente3ActionPerformed
-        NOmbreDelUsuario pestana4 = new NOmbreDelUsuario();
-        String fechaNacimiento = tfFechaNacimiento.getText();
-        pestana4.setVisible(true);
-        this.setVisible(false);
+    java.util.Date fechaNacimiento = (java.util.Date) spFechaNacimiento.getValue();
+
+    java.util.Date fechaActual = new java.util.Date();
+    if (fechaNacimiento.after(fechaActual)) {
+        javax.swing.JOptionPane.showMessageDialog(this, 
+            "La fecha de nacimiento no puede ser en el futuro.", 
+            "Fecha Inválida", 
+            javax.swing.JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    int edad = calcularEdad(fechaNacimiento);
+    if (edad < 15) {
+        javax.swing.JOptionPane.showMessageDialog(this, 
+            "Debes tener al menos 15 años para continuar. Tu edad actual: " + edad, 
+            "Edad Insuficiente", 
+            javax.swing.JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+     javax.swing.JOptionPane.showMessageDialog(this, 
+        "Fecha de nacimiento seleccionada: " + 
+        new java.text.SimpleDateFormat("dd/MM/yyyy").format(fechaNacimiento), 
+        "Fecha Nacimiento", 
+        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    NOmbreDelUsuario pestana4 = new NOmbreDelUsuario();
+    pestana4.setVisible(true);
+    this.setVisible(false);
+}
+
+    private int calcularEdad(java.util.Date fechaNacimiento) {
+    java.util.Calendar fechaNac = java.util.Calendar.getInstance();
+    fechaNac.setTime(fechaNacimiento);
+    java.util.Calendar fechaHoy = java.util.Calendar.getInstance();
+
+    int edad = fechaHoy.get(java.util.Calendar.YEAR) - fechaNac.get(java.util.Calendar.YEAR);
+    if (fechaHoy.get(java.util.Calendar.DAY_OF_YEAR) < fechaNac.get(java.util.Calendar.DAY_OF_YEAR)) {
+        edad--; // Resta un año si aún no ha cumplido en el año actual
+    }
+    return edad;
     }//GEN-LAST:event_btnSiguiente3ActionPerformed
 
     /**
@@ -163,6 +200,6 @@ public class NacimientoUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField tfFechaNacimiento;
+    private javax.swing.JSpinner spFechaNacimiento;
     // End of variables declaration//GEN-END:variables
 }

@@ -31,8 +31,8 @@ public class PasswordUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnSiguiente2 = new javax.swing.JButton();
-        tfContrasena = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        pwContrasena = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,13 +56,13 @@ public class PasswordUsuario extends javax.swing.JFrame {
             }
         });
 
-        tfContrasena.setBackground(new java.awt.Color(4, 48, 54));
-        tfContrasena.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        tfContrasena.setForeground(new java.awt.Color(255, 255, 255));
-
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Contraseña");
+
+        pwContrasena.setBackground(new java.awt.Color(4, 48, 54));
+        pwContrasena.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pwContrasena.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -71,14 +71,14 @@ public class PasswordUsuario extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSiguiente2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4))
                         .addGap(0, 55, Short.MAX_VALUE))
-                    .addComponent(tfContrasena)
-                    .addComponent(btnSiguiente2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pwContrasena))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -90,8 +90,8 @@ public class PasswordUsuario extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pwContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSiguiente2)
                 .addContainerGap(166, Short.MAX_VALUE))
@@ -117,7 +117,8 @@ public class PasswordUsuario extends javax.swing.JFrame {
 
     private void btnSiguiente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente2ActionPerformed
         NacimientoUsuario pestana3 = new NacimientoUsuario();
-        String contrasena = tfContrasena.getText();
+        char[] contrasena = pwContrasena.getPassword();
+        String textoContrasena = new String (contrasena);
         pestana3.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnSiguiente2ActionPerformed
@@ -163,6 +164,6 @@ public class PasswordUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField tfContrasena;
+    private javax.swing.JPasswordField pwContrasena;
     // End of variables declaration//GEN-END:variables
 }

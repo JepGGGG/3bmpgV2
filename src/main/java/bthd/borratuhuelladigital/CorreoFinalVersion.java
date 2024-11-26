@@ -117,9 +117,33 @@ public class CorreoFinalVersion extends javax.swing.JFrame {
 
     private void btnSiguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente1ActionPerformed
         PasswordUsuario pestana2 = new PasswordUsuario();
-        String correoElectronico = tfCorreoElectronico.getText();
-        pestana2.setVisible(true);
-        this.setVisible(false);
+        String correoElectronico = tfCorreoElectronico.getText().trim();
+
+        String[] dominiosPermitidos = {"@gmail.com", "@hotmail.com", "@yahoo.com", "@outlook.com", "@icloud.com"};
+        boolean esValido = false;
+
+        if (correoElectronico.contains("@") && !correoElectronico.startsWith("@")) {
+            for (String dominio : dominiosPermitidos) {
+                if (correoElectronico.endsWith(dominio)) {
+                    esValido = true;
+                    break;
+                }
+            }
+        }
+
+        if (esValido) {
+            javax.swing.JOptionPane.showMessageDialog(this, 
+                "Correo válido: " + correoElectronico, 
+                "Éxito", 
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            pestana2.setVisible(true);
+            this.setVisible(false);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, 
+                "Por favor, introduce un correo válido con uno de estos dominios: " + String.join(", ", dominiosPermitidos), 
+                "Error", 
+                javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnSiguiente1ActionPerformed
 
     /**
