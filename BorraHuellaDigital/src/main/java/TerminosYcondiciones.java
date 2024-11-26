@@ -10,7 +10,7 @@
 public class TerminosYcondiciones extends javax.swing.JFrame {
 
     /**
-     * Creates new form TerminosYcondiciones
+     * Creates new form CorreoUsuario
      */
     public TerminosYcondiciones() {
         initComponents();
@@ -66,6 +66,7 @@ public class TerminosYcondiciones extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TerminosYcondiciones.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
