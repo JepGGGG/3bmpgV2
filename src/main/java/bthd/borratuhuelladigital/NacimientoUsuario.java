@@ -54,6 +54,11 @@ public class NacimientoUsuario extends javax.swing.JFrame {
         btnSiguiente3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSiguiente3.setForeground(new java.awt.Color(255, 255, 255));
         btnSiguiente3.setText("Siguiente");
+        btnSiguiente3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguiente3ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,6 +114,13 @@ public class NacimientoUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSiguiente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente3ActionPerformed
+        NOmbreDelUsuario pestana4 = new NOmbreDelUsuario();
+        String fechaNacimiento = tfFechaNacimiento.getText();
+        pestana4.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSiguiente3ActionPerformed
 
     /**
      * @param args the command line arguments

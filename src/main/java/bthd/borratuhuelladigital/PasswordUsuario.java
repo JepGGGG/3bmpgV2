@@ -50,6 +50,11 @@ public class PasswordUsuario extends javax.swing.JFrame {
         btnSiguiente2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSiguiente2.setForeground(new java.awt.Color(255, 255, 255));
         btnSiguiente2.setText("Siguiente");
+        btnSiguiente2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguiente2ActionPerformed(evt);
+            }
+        });
 
         tfContrasena.setBackground(new java.awt.Color(4, 48, 54));
         tfContrasena.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -109,6 +114,13 @@ public class PasswordUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSiguiente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente2ActionPerformed
+        NacimientoUsuario pestana3 = new NacimientoUsuario();
+        String contrasena = tfContrasena.getText();
+        pestana3.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSiguiente2ActionPerformed
 
     /**
      * @param args the command line arguments

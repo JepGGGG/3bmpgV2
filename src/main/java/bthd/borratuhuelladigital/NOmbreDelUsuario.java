@@ -49,6 +49,11 @@ public class NOmbreDelUsuario extends javax.swing.JFrame {
         btnSiguiente4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSiguiente4.setForeground(new java.awt.Color(255, 255, 255));
         btnSiguiente4.setText("Siguiente");
+        btnSiguiente4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguiente4ActionPerformed(evt);
+            }
+        });
 
         tfNombreCompleto.setBackground(new java.awt.Color(4, 48, 54));
         tfNombreCompleto.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -99,6 +104,13 @@ public class NOmbreDelUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSiguiente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente4ActionPerformed
+        NombreUsuario pestana5 = new NombreUsuario();
+        String nombreCompleto = tfNombreCompleto.getText();
+        pestana5.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSiguiente4ActionPerformed
 
     /**
      * @param args the command line arguments

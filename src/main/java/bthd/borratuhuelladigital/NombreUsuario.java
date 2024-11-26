@@ -49,6 +49,11 @@ public class NombreUsuario extends javax.swing.JFrame {
         btnSiguiente5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSiguiente5.setForeground(new java.awt.Color(255, 255, 255));
         btnSiguiente5.setText("Siguiente");
+        btnSiguiente5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguiente5ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,6 +106,13 @@ public class NombreUsuario extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSiguiente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente5ActionPerformed
+        TerminosYcondiciones pestana6 = new TerminosYcondiciones();
+        String nombreUsuario = tfNombreUsuario.getText();
+        pestana6.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSiguiente5ActionPerformed
 
     /**
      * @param args the command line arguments
