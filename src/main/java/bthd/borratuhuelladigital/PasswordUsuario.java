@@ -116,11 +116,70 @@ public class PasswordUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSiguiente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente2ActionPerformed
-        NacimientoUsuario pestana3 = new NacimientoUsuario();
-        char[] contrasena = pwContrasena.getPassword();
-        String textoContrasena = new String (contrasena);
-        pestana3.setVisible(true);
-        this.setVisible(false);
+    String mensajeInicial = "¿Crees que tu contraseña es segura?";
+    int opcionInicial = javax.swing.JOptionPane.showConfirmDialog(this, mensajeInicial, "Seguridad de Contraseña", javax.swing.JOptionPane.YES_NO_OPTION);
+
+    if (opcionInicial == javax.swing.JOptionPane.YES_OPTION) {
+        String reglas = """
+                Reglas básicas para una contraseña segura:
+                1. Al menos 8 caracteres.
+                2. Incluye letras mayúsculas y minúsculas.
+                3. Usa al menos un número.
+                4. Agrega un carácter especial (como @, #, $, etc.).
+                """;
+
+        int cumpleReglas = javax.swing.JOptionPane.showConfirmDialog(this, 
+            "¿Cumple tu contraseña con las siguientes reglas básicas?\n\n" + reglas, 
+            "Verificación de seguridad", 
+            javax.swing.JOptionPane.YES_NO_OPTION);
+
+        if (cumpleReglas == javax.swing.JOptionPane.YES_OPTION) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "¡Excelente! Tienes una contraseña segura.",
+                "Éxito",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            NacimientoUsuario pestana3 = new NacimientoUsuario();
+            pestana3.setVisible(true);
+            this.setVisible(false);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "Te recomendamos cambiar tu contraseña para cumplir con las reglas básicas.",
+                "Recomendación",
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+        }
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Una contraseña segura debe cumplir con lo siguiente:\n" +
+            "1. Al menos 8 caracteres.\n" +
+            "2. Incluye letras mayúsculas y minúsculas.\n" +
+            "3. Usa al menos un número.\n" +
+            "4. Agrega un carácter especial (como @, #, $, etc.).",
+            "Reglas para una contraseña segura",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        int deseaCambiar = javax.swing.JOptionPane.showConfirmDialog(this, 
+            "¿Deseas cambiar tu contraseña para cumplir con estas reglas?", 
+            "Cambiar Contraseña", 
+            javax.swing.JOptionPane.YES_NO_OPTION);
+
+        if (deseaCambiar == javax.swing.JOptionPane.YES_OPTION) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "¡Gracias por tomar la seguridad en serio!",
+                "Confirmación",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "¡Sorpresa! Para proteger tu cuenta, te ayudaremos a crear una contraseña segura automáticamente.",
+                "Trampa amistosa",
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "Sugerencia: Usa esta contraseña segura:\n" +
+                "Ex@mpl3#2024",
+                "Contraseña Generada",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
     }//GEN-LAST:event_btnSiguiente2ActionPerformed
 
     /**

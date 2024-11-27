@@ -45,6 +45,11 @@ public class TerminosYcondiciones extends javax.swing.JFrame {
         btnAceptar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnAceptar.setForeground(new java.awt.Color(255, 255, 255));
         btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -93,6 +98,104 @@ public class TerminosYcondiciones extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+    int opcion = javax.swing.JOptionPane.showConfirmDialog(this,
+        "¿Has leído los términos y condiciones de Life Invader y estás de acuerdo con ellos?",
+        "Términos y Condiciones",
+        javax.swing.JOptionPane.YES_NO_OPTION,
+        javax.swing.JOptionPane.QUESTION_MESSAGE);
+
+    if (opcion == javax.swing.JOptionPane.NO_OPTION) {
+        // Preguntar si desea cancelar el registro o continuar
+        int cancelarOContinuar = javax.swing.JOptionPane.showConfirmDialog(this,
+            "¿Deseas cancelar el registro?",
+            "Cancelar Registro",
+            javax.swing.JOptionPane.YES_NO_OPTION,
+            javax.swing.JOptionPane.WARNING_MESSAGE);
+
+        if (cancelarOContinuar == javax.swing.JOptionPane.YES_OPTION) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "El registro se ha cancelado. Gracias por tu interés en Life Invader.",
+                "Registro Cancelado",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            System.exit(0); // Cierra el programa
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "Volverás a la pantalla actual para reconsiderar los términos.",
+                "Continuar Registro",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            return; // Vuelve al punto donde se quedó
+        }
+    }
+
+    // Mostrar cláusulas individualmente si no los ha leído
+    String[] clausulas = {
+        "1. Uso Responsable: Todo lo que compartes afecta tu huella digital.",
+        "2. Publicaciones: Las publicaciones no pueden ser eliminadas individualmente. Para eliminarlas, borra tu cuenta.",
+        "3. Privacidad: Reportes educativos basados en tu actividad.",
+        "4. Cookies: Se usan cookies esenciales, analíticas y de personalización.",
+        "5. Responsabilidad: Sé responsable con lo que compartes.",
+        "6. Propiedad Intelectual: Otorgas licencia para fines educativos o promocionales.",
+        "7. Modificaciones: Los términos pueden cambiar con notificación previa."
+    };
+
+    int i = 0; // Inicializamos un índice para controlar la cláusula actual
+
+    while (i < clausulas.length) {
+        int respuesta = javax.swing.JOptionPane.showConfirmDialog(this,
+            clausulas[i] + "\n\n¿Estás de acuerdo con esta cláusula?",
+            "Aceptación de Términos",
+            javax.swing.JOptionPane.YES_NO_OPTION,
+            javax.swing.JOptionPane.QUESTION_MESSAGE);
+
+        if (respuesta == javax.swing.JOptionPane.NO_OPTION) {
+            int cancelarOContinuar = javax.swing.JOptionPane.showConfirmDialog(this,
+                "¿Deseas cancelar el registro?",
+                "Cancelar Registro",
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+
+            if (cancelarOContinuar == javax.swing.JOptionPane.YES_OPTION) {
+                javax.swing.JOptionPane.showMessageDialog(this,
+                    "El registro se ha cancelado. Gracias por tu interés en Life Invader.",
+                    "Registro Cancelado",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                System.exit(0); // Cierra el programa
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this,
+                    "Volverás a la pantalla actual para reconsiderar los términos.",
+                    "Continuar Registro",
+                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            }
+        } else {
+            i++; // Avanzamos a la siguiente cláusula si acepta
+        }
+    }
+
+    // Comentario: Aquí continúa el proceso de registro después de aceptar los términos
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "¡Gracias por aceptar los términos y condiciones!\nTu registro puede continuar.",
+        "Registro Aprobado",
+        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+    //
+}
+
+// Método para redirigir al usuario a una pestaña informativa antes de cerrar
+private void redirigirAPestanaInformativa() {
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "Los términos y condiciones de uso son importantes para proteger tu privacidad.\nPor favor, tómate un momento para reflexionar sobre ellos.",
+        "Conciencia sobre la Huella Digital",
+        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "El programa se cerrará para que puedas considerar tu decisión.",
+        "Cierre del Programa",
+        javax.swing.JOptionPane.WARNING_MESSAGE);
+
+    // Cerrar el programa
+    System.exit(0); 
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**
      * @param args the command line arguments

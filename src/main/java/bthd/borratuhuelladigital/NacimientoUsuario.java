@@ -118,8 +118,8 @@ public class NacimientoUsuario extends javax.swing.JFrame {
 
     private void btnSiguiente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente3ActionPerformed
     java.util.Date fechaNacimiento = (java.util.Date) spFechaNacimiento.getValue();
-
     java.util.Date fechaActual = new java.util.Date();
+
     if (fechaNacimiento.after(fechaActual)) {
         javax.swing.JOptionPane.showMessageDialog(this, 
             "La fecha de nacimiento no puede ser en el futuro.", 
@@ -129,32 +129,58 @@ public class NacimientoUsuario extends javax.swing.JFrame {
     }
 
     int edad = calcularEdad(fechaNacimiento);
-    if (edad < 15) {
+    int confirmar = javax.swing.JOptionPane.showConfirmDialog(this, 
+        "¿Estás seguro de compartir tu fecha de nacimiento?\n" +
+        "Compartir esta información puede exponerte a riesgos como:\n" +
+        "- Suplantación de identidad\n" +
+        "- Uso no autorizado de tus datos personales\n" +
+        "- Impacto en tu huella digital\n\n" +
+        "¿Deseas continuar?", 
+        "Confirmación de Información", 
+        javax.swing.JOptionPane.YES_NO_OPTION);
+
+    if (confirmar == javax.swing.JOptionPane.NO_OPTION) {
         javax.swing.JOptionPane.showMessageDialog(this, 
-            "Debes tener al menos 15 años para continuar. Tu edad actual: " + edad, 
-            "Edad Insuficiente", 
-            javax.swing.JOptionPane.ERROR_MESSAGE);
-        return;
+            "Entender los riesgos de compartir tu fecha de nacimiento es crucial:\n" +
+            "1. Los ciberdelincuentes pueden usarla para acceder a tus cuentas.\n" +
+            "2. Puede ser utilizada para responder preguntas de seguridad sin tu permiso.\n" +
+            "3. Junto con otros datos, facilita la creación de perfiles de usuario para fines comerciales o fraudulentos.", 
+            "Riesgos de Compartir Información", 
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        int continuar = javax.swing.JOptionPane.showConfirmDialog(this, 
+            "¿Aún deseas proporcionar esta información?", 
+            "Confirmación Final", 
+            javax.swing.JOptionPane.YES_NO_OPTION);
+
+        if (continuar == javax.swing.JOptionPane.NO_OPTION) {
+            javax.swing.JOptionPane.showMessageDialog(this, 
+                "El registro se ha cancelado. Reflexiona sobre los riesgos antes de continuar.", 
+                "Registro Cancelado", 
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+            System.exit(0);
+        }
     }
 
-     javax.swing.JOptionPane.showMessageDialog(this, 
+    javax.swing.JOptionPane.showMessageDialog(this, 
         "Fecha de nacimiento seleccionada: " + 
-        new java.text.SimpleDateFormat("dd/MM/yyyy").format(fechaNacimiento), 
-        "Fecha Nacimiento", 
+        new java.text.SimpleDateFormat("dd/MM/yyyy").format(fechaNacimiento) + 
+        ".\nRecuerda: Protege tu privacidad y sé consciente de los riesgos.", 
+        "Fecha Registrada", 
         javax.swing.JOptionPane.INFORMATION_MESSAGE);
     NOmbreDelUsuario pestana4 = new NOmbreDelUsuario();
     pestana4.setVisible(true);
     this.setVisible(false);
 }
 
-    private int calcularEdad(java.util.Date fechaNacimiento) {
+private int calcularEdad(java.util.Date fechaNacimiento) {
     java.util.Calendar fechaNac = java.util.Calendar.getInstance();
     fechaNac.setTime(fechaNacimiento);
     java.util.Calendar fechaHoy = java.util.Calendar.getInstance();
 
     int edad = fechaHoy.get(java.util.Calendar.YEAR) - fechaNac.get(java.util.Calendar.YEAR);
     if (fechaHoy.get(java.util.Calendar.DAY_OF_YEAR) < fechaNac.get(java.util.Calendar.DAY_OF_YEAR)) {
-        edad--; // Resta un año si aún no ha cumplido en el año actual
+        edad--;
     }
     return edad;
     }//GEN-LAST:event_btnSiguiente3ActionPerformed

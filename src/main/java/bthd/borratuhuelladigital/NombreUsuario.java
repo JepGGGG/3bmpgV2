@@ -108,10 +108,64 @@ public class NombreUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSiguiente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente5ActionPerformed
-        TerminosYcondiciones pestana6 = new TerminosYcondiciones();
-        String nombreUsuario = tfNombreUsuario.getText();
-        pestana6.setVisible(true);
-        this.setVisible(false);
+    String nombreUsuario = tfNombreUsuario.getText().trim();
+
+    if (nombreUsuario.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "El nombre de usuario no puede estar vacío. Por favor, elige uno que siga las reglas de netiqueta.",
+            "Error en Nombre de Usuario",
+            javax.swing.JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    String mensajeReglas = """
+        Antes de continuar, considera estas reglas para un nombre de usuario seguro y respetuoso:
+        - No uses información personal (como tu nombre completo, fecha de nacimiento o dirección).
+        - Evita nombres ofensivos, groseros o inapropiados.
+        - Sé creativo, pero asegúrate de que sea fácil de recordar.
+        - No uses contraseñas o información sensible como nombre de usuario.
+        - Usa nombres que promuevan un ambiente positivo en línea.
+    """;
+
+    int opcion = javax.swing.JOptionPane.showConfirmDialog(this,
+        mensajeReglas + "\n\n¿Cumple tu nombre de usuario con estas reglas?",
+        "Conciencia sobre Nombre de Usuario",
+        javax.swing.JOptionPane.YES_NO_OPTION,
+        javax.swing.JOptionPane.QUESTION_MESSAGE);
+
+    if (opcion == javax.swing.JOptionPane.NO_OPTION) {
+        String mensajeRiesgos = """
+            Riesgos al usar nombres inapropiados o personales:
+            - Podrías comprometer tu privacidad y exponer información sensible.
+            - Nombres ofensivos podrían llevar a restricciones o bloqueos en plataformas.
+            - Podrías ser víctima de acoso o burlas por un nombre inapropiado.
+            - Nombres que contienen datos sensibles aumentan tu vulnerabilidad al robo de identidad.
+        """;
+        javax.swing.JOptionPane.showMessageDialog(this,
+            mensajeRiesgos + "\n\nPor favor, elige un nombre de usuario que sea seguro y apropiado.",
+            "Advertencia de Privacidad",
+            javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    int confirmacionFinal = javax.swing.JOptionPane.showConfirmDialog(this,
+        "¿Estás seguro de que quieres usar este nombre de usuario: '" + nombreUsuario + "'?\n" +
+        "Recuerda que el nombre de usuario es visible para todos los usuarios de la plataforma.",
+        "Confirmación de Nombre de Usuario",
+        javax.swing.JOptionPane.YES_NO_OPTION,
+        javax.swing.JOptionPane.WARNING_MESSAGE);
+
+    if (confirmacionFinal == javax.swing.JOptionPane.NO_OPTION) {
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Por favor, elige un nuevo nombre de usuario que cumpla con las reglas de netiqueta.",
+            "Cambio de Nombre de Usuario",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        return;
+    }
+
+    TerminosYcondiciones pestana6 = new TerminosYcondiciones();
+    pestana6.setVisible(true);
+    this.setVisible(false);
     }//GEN-LAST:event_btnSiguiente5ActionPerformed
 
     /**

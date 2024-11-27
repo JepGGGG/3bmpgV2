@@ -116,34 +116,105 @@ public class CorreoFinalVersion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSiguiente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente1ActionPerformed
-        PasswordUsuario pestana2 = new PasswordUsuario();
-        String correoElectronico = tfCorreoElectronico.getText().trim();
+PasswordUsuario pestana2 = new PasswordUsuario();
+String correoElectronico = tfCorreoElectronico.getText().trim();
 
-        String[] dominiosPermitidos = {"@gmail.com", "@hotmail.com", "@yahoo.com", "@outlook.com", "@icloud.com"};
-        boolean esValido = false;
+String[] dominiosPermitidos = {"@gmail.com", "@hotmail.com", "@yahoo.com", "@outlook.com", "@icloud.com"};
+boolean esValido = false;
 
-        if (correoElectronico.contains("@") && !correoElectronico.startsWith("@")) {
-            for (String dominio : dominiosPermitidos) {
-                if (correoElectronico.endsWith(dominio)) {
-                    esValido = true;
-                    break;
-                }
-            }
+if (correoElectronico.contains("@") && !correoElectronico.startsWith("@")) {
+    for (String dominio : dominiosPermitidos) {
+        if (correoElectronico.endsWith(dominio)) {
+            esValido = true;
+            break;
         }
+    }
+}
 
-        if (esValido) {
-            javax.swing.JOptionPane.showMessageDialog(this, 
-                "Correo válido: " + correoElectronico, 
-                "Éxito", 
+if (esValido) {
+    int conoceRiesgos = javax.swing.JOptionPane.showConfirmDialog(this,
+        "¿Conoces los riesgos de compartir un correo importante?\n"
+        + "Por ejemplo:\n"
+        + "- Exposición a ataques de phishing\n"
+        + "- Spam y publicidad no deseada\n"
+        + "- Posibles fugas de datos\n",
+        "Conciencia sobre la huella digital",
+        javax.swing.JOptionPane.YES_NO_OPTION,
+        javax.swing.JOptionPane.WARNING_MESSAGE);
+
+    if (conoceRiesgos == javax.swing.JOptionPane.YES_OPTION) {
+        int deseaContinuar = javax.swing.JOptionPane.showConfirmDialog(this,
+            "¿Aún así deseas continuar y crear la cuenta?",
+            "Confirmar acción",
+            javax.swing.JOptionPane.YES_NO_OPTION,
+            javax.swing.JOptionPane.QUESTION_MESSAGE);
+
+        if (deseaContinuar == javax.swing.JOptionPane.YES_OPTION) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "Gracias por tu confianza. Continuando con el registro.",
+                "Registro en proceso",
                 javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
             pestana2.setVisible(true);
             this.setVisible(false);
         } else {
-            javax.swing.JOptionPane.showMessageDialog(this, 
-                "Por favor, introduce un correo válido con uno de estos dominios: " + String.join(", ", dominiosPermitidos), 
-                "Error", 
-                javax.swing.JOptionPane.ERROR_MESSAGE);
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "El registro se ha cancelado. Por favor, reflexiona sobre los riesgos.",
+                "Registro cancelado",
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+            System.exit(0);
         }
+
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Es importante estar informado. Aquí tienes algunos puntos clave sobre los riesgos:",
+            "Concienciación",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "¿Sabías que tu correo puede ser usado para enviarte publicidad no deseada (spam)?",
+            "Impacto de compartir datos",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "En caso de filtración, los hackers pueden acceder a otros servicios usando tu correo.",
+            "Riesgos de seguridad",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        javax.swing.JOptionPane.showMessageDialog(this,
+            "Tu correo puede ser usado para enviarte mensajes falsos (phishing) y robar tus datos.",
+            "Posibles ataques",
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        int continuarDespuesDeConciencia = javax.swing.JOptionPane.showConfirmDialog(this,
+            "Después de conocer estos riesgos, ¿quieres continuar con el registro?",
+            "Decisión final",
+            javax.swing.JOptionPane.YES_NO_OPTION,
+            javax.swing.JOptionPane.QUESTION_MESSAGE);
+
+        if (continuarDespuesDeConciencia == javax.swing.JOptionPane.YES_OPTION) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "Gracias por confiar. Te recomendamos usar un correo secundario para mayor seguridad.",
+                "Sugerencia",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+            pestana2.setVisible(true);
+            this.setVisible(false);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                "El registro se ha cancelado. Te invitamos a reflexionar sobre los riesgos de compartir información personal.",
+                "Registro cancelado",
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+            System.exit(0);
+        }
+    }
+
+} else {
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "Por favor, introduce un correo válido con uno de estos dominios: " + String.join(", ", dominiosPermitidos),
+        "Error",
+        javax.swing.JOptionPane.ERROR_MESSAGE);
+}
     }//GEN-LAST:event_btnSiguiente1ActionPerformed
 
     /**
