@@ -106,10 +106,59 @@ public class NOmbreDelUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSiguiente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente4ActionPerformed
-        NombreUsuario pestana5 = new NombreUsuario();
-        String nombreCompleto = tfNombreCompleto.getText();
-        pestana5.setVisible(true);
-        this.setVisible(false);
+    String nombreCompleto = tfNombreCompleto.getText().trim();
+
+    if (nombreCompleto.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, 
+            "Por favor, proporciona tu nombre completo.", 
+            "Campo Vacío", 
+            javax.swing.JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+
+    int confirmar = javax.swing.JOptionPane.showConfirmDialog(this, 
+        "Proporcionar tu nombre real puede impactar tu huella digital.\n" +
+        "Riesgos de usar tu nombre real en una plataforma digital:\n" +
+        "- Es más fácil que te identifiquen en búsquedas en línea.\n" +
+        "- Podrías ser objetivo de campañas de marketing personalizadas.\n" +
+        "- Facilita la recopilación de datos por parte de terceros.\n\n" +
+        "¿Deseas continuar?", 
+        "Confirmación de Información", 
+        javax.swing.JOptionPane.YES_NO_OPTION);
+
+    if (confirmar == javax.swing.JOptionPane.NO_OPTION) {
+        javax.swing.JOptionPane.showMessageDialog(this, 
+            "Tu nombre real puede ser utilizado para:\n" +
+            "1. Crear perfiles detallados sobre ti en internet.\n" +
+            "2. Relacionar otras cuentas o información que hayas compartido.\n" +
+            "3. Acceder a datos sensibles en caso de vulnerabilidades de seguridad.\n\n" +
+            "Para proteger tu privacidad, considera usar un alias o nombre menos identificable.", 
+            "Riesgos de Proporcionar Nombre Real", 
+            javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+        int continuar = javax.swing.JOptionPane.showConfirmDialog(this, 
+            "¿Aún deseas proporcionar tu nombre real?", 
+            "Confirmación Final", 
+            javax.swing.JOptionPane.YES_NO_OPTION);
+
+        if (continuar == javax.swing.JOptionPane.NO_OPTION) {
+            javax.swing.JOptionPane.showMessageDialog(this, 
+                "El registro se ha cancelado. Reflexiona sobre los riesgos antes de continuar.", 
+                "Registro Cancelado", 
+                javax.swing.JOptionPane.WARNING_MESSAGE);
+            System.exit(0);
+        }
+    }
+
+    javax.swing.JOptionPane.showMessageDialog(this, 
+        "Has decidido usar tu nombre real: " + nombreCompleto + 
+        ".\nRecuerda proteger tu privacidad en todo momento.", 
+        "Nombre Registrado", 
+        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+    NombreUsuario pestana5 = new NombreUsuario();
+    pestana5.setVisible(true);
+    this.setVisible(false);
     }//GEN-LAST:event_btnSiguiente4ActionPerformed
 
     /**
