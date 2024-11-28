@@ -177,11 +177,14 @@ public class TerminosYcondiciones extends javax.swing.JFrame {
         "¡Gracias por aceptar los términos y condiciones!\nTu registro puede continuar.",
         "Registro Aprobado",
         javax.swing.JOptionPane.INFORMATION_MESSAGE);
-
-    //
+    
+    PerfilUsuario pestana7 = new PerfilUsuario();
+    pestana7.setVisible(true);
+    this.setVisible(false);
+    
+    
 }
 
-// Método para redirigir al usuario a una pestaña informativa antes de cerrar
 private void redirigirAPestanaInformativa() {
     javax.swing.JOptionPane.showMessageDialog(this,
         "Los términos y condiciones de uso son importantes para proteger tu privacidad.\nPor favor, tómate un momento para reflexionar sobre ellos.",
@@ -193,7 +196,6 @@ private void redirigirAPestanaInformativa() {
         "Cierre del Programa",
         javax.swing.JOptionPane.WARNING_MESSAGE);
 
-    // Cerrar el programa
     System.exit(0); 
     }//GEN-LAST:event_btnAceptarActionPerformed
 

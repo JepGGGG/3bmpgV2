@@ -17,6 +17,7 @@ public class NombreUsuario extends javax.swing.JFrame {
     public NombreUsuario() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -166,6 +167,10 @@ public class NombreUsuario extends javax.swing.JFrame {
     TerminosYcondiciones pestana6 = new TerminosYcondiciones();
     pestana6.setVisible(true);
     this.setVisible(false);
+    PerfilUsuario perfilUsuario = new PerfilUsuario();
+    perfilUsuario.setUserName(nombreUsuario);
+
+    
     }//GEN-LAST:event_btnSiguiente5ActionPerformed
 
     /**
