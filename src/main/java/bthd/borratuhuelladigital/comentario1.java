@@ -9,21 +9,20 @@ import java.awt.geom.RoundRectangle2D;
  *
  * @author jaxt3
  */
-public class pestanaCancelar extends javax.swing.JFrame {
-    private javax.swing.JFrame frameAnterior; 
+public class comentario1 extends javax.swing.JFrame {
+
     /**
-     * Creates new form post6
+     * Creates new form pestana1Correo
      */
-    public pestanaCancelar(javax.swing.JFrame frameAnterior) {
-        this.frameAnterior = frameAnterior; // Guarda el frame anterior
+    public comentario1() {
         setUndecorated(true); // Elimina los bordes y barra de título predeterminados
         initComponents();
-        setSize(475, 163); // Tamaño del JFrame
+        setSize(475,163); // Tamaño del JFrame
         setLocationRelativeTo(null); // Centra el JFrame
         // Aplica la forma de bordes redondeados
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
     }
-
+    
     @Override
     public void paint(Graphics g) {
         // Renderiza un fondo con bordes redondeados
@@ -44,8 +43,8 @@ public class pestanaCancelar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        siCancelar = new javax.swing.JButton();
-        noCancelar = new javax.swing.JButton();
+        siSeguro = new javax.swing.JButton();
+        noSeguro = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -54,24 +53,24 @@ public class pestanaCancelar extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        siCancelar.setBackground(new java.awt.Color(241, 44, 41));
-        siCancelar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siCancelar.setForeground(new java.awt.Color(0, 0, 0));
-        siCancelar.setText("SI");
-        siCancelar.setToolTipText("");
-        siCancelar.addActionListener(new java.awt.event.ActionListener() {
+        siSeguro.setBackground(new java.awt.Color(241, 44, 41));
+        siSeguro.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        siSeguro.setForeground(new java.awt.Color(0, 0, 0));
+        siSeguro.setText("SI");
+        siSeguro.setToolTipText("");
+        siSeguro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                siCancelarActionPerformed(evt);
+                siSeguroActionPerformed(evt);
             }
         });
 
-        noCancelar.setBackground(new java.awt.Color(241, 44, 41));
-        noCancelar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noCancelar.setForeground(new java.awt.Color(0, 0, 0));
-        noCancelar.setText("NO");
-        noCancelar.addActionListener(new java.awt.event.ActionListener() {
+        noSeguro.setBackground(new java.awt.Color(241, 44, 41));
+        noSeguro.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
+        noSeguro.setForeground(new java.awt.Color(0, 0, 0));
+        noSeguro.setText("NO");
+        noSeguro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noCancelarActionPerformed(evt);
+                noSeguroActionPerformed(evt);
             }
         });
 
@@ -82,7 +81,7 @@ public class pestanaCancelar extends javax.swing.JFrame {
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("¿Cancelar la publicación?");
+        jTextArea1.setText("¿Estás seguro que quieres\npublicar este comentario?");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -92,9 +91,9 @@ public class pestanaCancelar extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(siCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(siSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(noCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(noSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -108,8 +107,8 @@ public class pestanaCancelar extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(noSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(siSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
 
@@ -127,17 +126,17 @@ public class pestanaCancelar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void siCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siCancelarActionPerformed
-        System.exit(0);//cambiar a l menu reiniciado
-    }//GEN-LAST:event_siCancelarActionPerformed
+    private void noSeguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noSeguroActionPerformed
+        cancelarComentar pasarAAnular = new cancelarComentar(this);
+        pasarAAnular.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_noSeguroActionPerformed
 
-    private void noCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noCancelarActionPerformed
-
-        if (frameAnterior != null) {
-            frameAnterior.setVisible(true);
-        }
-        this.dispose(); // Cierra este frame
-    }//GEN-LAST:event_noCancelarActionPerformed
+    private void siSeguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siSeguroActionPerformed
+        comentario2 pasarAComprometer = new comentario2();
+        pasarAComprometer.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_siSeguroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,21 +155,20 @@ public class pestanaCancelar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(post6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pestana1Correo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(post6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pestana1Correo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(post6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pestana1Correo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(post6.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(pestana1Correo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new post6().setVisible(true);
+                new comentario1().setVisible(true);
             }
         });
     }
@@ -179,7 +177,7 @@ public class pestanaCancelar extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton noCancelar;
-    private javax.swing.JButton siCancelar;
+    private javax.swing.JButton noSeguro;
+    private javax.swing.JButton siSeguro;
     // End of variables declaration//GEN-END:variables
 }
