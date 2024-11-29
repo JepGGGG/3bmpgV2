@@ -68,12 +68,9 @@ public class SubirPostUsuario extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ubicacion");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Descripcion");
 
-        jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
@@ -96,10 +93,9 @@ public class SubirPostUsuario extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1))
-                        .addGap(97, 97, 97)))
+                        .addComponent(jTextField1)
+                        .addGap(97, 97, 97))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
