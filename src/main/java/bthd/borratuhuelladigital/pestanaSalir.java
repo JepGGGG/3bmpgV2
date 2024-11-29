@@ -139,7 +139,7 @@ public class pestanaSalir extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siSalirActionPerformed
-        System.exit(0);//cambiar a l menu reiniciado
+        this.dispose();
     }//GEN-LAST:event_siSalirActionPerformed
 
     private void noSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noSalirActionPerformed
