@@ -3,25 +3,57 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package bthd.borratuhuelladigital;
+import bthd.borratuhuelladigital.pestana1Correo;
 import java.awt.*;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.awt.geom.RoundRectangle2D;
 /**
  *
  * @author jesus
  */
+
 public class LoginFinal extends javax.swing.JFrame {
     
     /**
      * Creates new form LoginFinal
      */
     public LoginFinal() {
-        setUndecorated(true); // Elimina bordes y barra de título
-        initComponents(); // Inicializa los componentes generados por el Form Editor
-        setLocationRelativeTo(null); // Centra el JFrame en la pantalla
-        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50)); // Bordes redondeados
-    }
+        // Elimina la barra de título y configura bordes redondeados
+    setUndecorated(true);
+    initComponents(); // Inicializa los componentes del JFrame
+    
+    // Centra el JFrame en la pantalla
+    setLocationRelativeTo(null); 
+    
+    // Asegúrate de que el tamaño del JFrame esté calculado
+    pack();
+    
+    // Aplica la forma redondeada
+    setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
+        try {
+            // Carga y escala la imagen
+            File file = new File("src/main/resources/images/ImagenLogoColor.png");
+            BufferedImage bufferedImage = ImageIO.read(file);
 
-    @Override
+            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+
+            Image scaledImage = imageIcon.getImage().getScaledInstance(
+                jLabel6.getWidth(), 
+                jLabel6.getHeight(), 
+                Image.SCALE_SMOOTH
+            );
+            jLabel2.setIcon(new ImageIcon(scaledImage));
+        } catch (IOException e) {
+            System.err.println("Error al cargar la imagen: " + e.getMessage());
+        }
+    }
+    
+        @Override
     public void paint(Graphics g) {
         // Renderiza un fondo con bordes redondeados
         Graphics2D g2 = (Graphics2D) g;
@@ -45,7 +77,6 @@ public class LoginFinal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtUserName = new javax.swing.JTextField();
@@ -56,6 +87,8 @@ public class LoginFinal extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtContrasena = new javax.swing.JPasswordField();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jLabel6 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -68,69 +101,38 @@ public class LoginFinal extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(800, 500));
         jPanel2.setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 49, 49));
-        jPanel1.setPreferredSize(new java.awt.Dimension(300, 500));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel1);
-        jPanel1.setBounds(0, 0, 260, 540);
-
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel1.setText("Nombre de Usuario");
 
-        txtUserName.setBackground(new java.awt.Color(255, 255, 255));
         txtUserName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtUserName.setForeground(new java.awt.Color(0, 0, 0));
         txtUserName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        txtCorreo.setBackground(new java.awt.Color(255, 255, 255));
         txtCorreo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtCorreo.setForeground(new java.awt.Color(0, 0, 0));
         txtCorreo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel2.setText("Correo");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre Completo");
 
         login.setBackground(new java.awt.Color(255, 49, 49));
         login.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        login.setForeground(new java.awt.Color(0, 0, 0));
-        login.setText("CONTINUAR");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
             }
         });
 
-        txtNombre.setBackground(new java.awt.Color(255, 255, 255));
         txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtNombre.setForeground(new java.awt.Color(0, 0, 0));
         txtNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel4.setText("Contraseña");
 
-        txtContrasena.setBackground(new java.awt.Color(255, 255, 255));
         txtContrasena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtContrasena.setForeground(new java.awt.Color(0, 0, 0));
         txtContrasena.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         txtContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,23 +140,31 @@ public class LoginFinal extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.setText("Acepto lo terminos y condiciones");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel1)
-                    .addComponent(txtUserName)
-                    .addComponent(jLabel2)
-                    .addComponent(txtCorreo)
-                    .addComponent(jLabel3)
-                    .addComponent(login, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                    .addComponent(txtNombre)
-                    .addComponent(txtContrasena))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jCheckBox1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(login)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel1)
+                                .addComponent(txtUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                                .addComponent(jLabel2)
+                                .addComponent(txtCorreo)
+                                .addComponent(jLabel3)
+                                .addComponent(txtNombre)
+                                .addComponent(txtContrasena)))))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,13 +185,19 @@ public class LoginFinal extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85))
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBox1)
+                .addGap(34, 34, 34)
+                .addComponent(login)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3);
-        jPanel3.setBounds(260, 0, 540, 510);
+        jPanel3.setBounds(270, 0, 540, 510);
+
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(0, 0, 270, 510);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -265,11 +281,12 @@ public class LoginFinal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
