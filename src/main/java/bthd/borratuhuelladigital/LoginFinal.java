@@ -36,22 +36,22 @@ public class LoginFinal extends javax.swing.JFrame {
     // Aplica la forma redondeada
     setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
         try {
-            // Carga y escala la imagen
             File file = new File("src/main/resources/images/ImagenLogoColor.png");
             BufferedImage bufferedImage = ImageIO.read(file);
-
             ImageIcon imageIcon = new ImageIcon(bufferedImage);
-
             Image scaledImage = imageIcon.getImage().getScaledInstance(
-                jLabel6.getWidth(), 
-                jLabel6.getHeight(), 
+                jLabel5.getWidth(), 
+                jLabel5.getHeight(), 
                 Image.SCALE_SMOOTH
             );
-            jLabel2.setIcon(new ImageIcon(scaledImage));
+            jLabel5.setIcon(new ImageIcon(scaledImage));
         } catch (IOException e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+
     }
+    
+    
     
         @Override
     public void paint(Graphics g) {
@@ -83,12 +83,12 @@ public class LoginFinal extends javax.swing.JFrame {
         txtCorreo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        login = new javax.swing.JButton();
         txtNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtContrasena = new javax.swing.JPasswordField();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
+        login = new bthd.borratuhuelladigital.ButtonRound();
+        jLabel5 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -118,14 +118,6 @@ public class LoginFinal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel3.setText("Nombre Completo");
 
-        login.setBackground(new java.awt.Color(255, 49, 49));
-        login.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
-            }
-        });
-
         txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
@@ -142,6 +134,18 @@ public class LoginFinal extends javax.swing.JFrame {
 
         jCheckBox1.setText("Acepto lo terminos y condiciones");
 
+        login.setForeground(new java.awt.Color(241, 44, 41));
+        login.setBorderColor(new java.awt.Color(241, 44, 41));
+        login.setColor(new java.awt.Color(241, 44, 41));
+        login.setColorClick(new java.awt.Color(241, 44, 41));
+        login.setColorOver(new java.awt.Color(241, 44, 41));
+        login.setRadius(50);
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -153,18 +157,19 @@ public class LoginFinal extends javax.swing.JFrame {
                         .addComponent(jCheckBox1))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(49, 49, 49)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(login)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel1)
-                                .addComponent(txtUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                                .addComponent(jLabel2)
-                                .addComponent(txtCorreo)
-                                .addComponent(jLabel3)
-                                .addComponent(txtNombre)
-                                .addComponent(txtContrasena)))))
-                .addContainerGap(111, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel1)
+                            .addComponent(txtUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtCorreo)
+                            .addComponent(jLabel3)
+                            .addComponent(txtNombre)
+                            .addComponent(txtContrasena)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,17 +192,17 @@ public class LoginFinal extends javax.swing.JFrame {
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox1)
-                .addGap(34, 34, 34)
-                .addComponent(login)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
         );
 
         jPanel2.add(jPanel3);
-        jPanel3.setBounds(270, 0, 540, 510);
+        jPanel3.setBounds(260, 0, 550, 510);
 
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.add(jLabel6);
-        jLabel6.setBounds(0, 0, 270, 510);
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(-10, -10, 270, 530);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,6 +220,10 @@ public class LoginFinal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
+
+    }//GEN-LAST:event_txtContrasenaActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
     String userName = txtUserName.getText().trim();
@@ -236,11 +245,8 @@ public class LoginFinal extends javax.swing.JFrame {
 
     pestana1Correo cambiarAPestana = new pestana1Correo();
     cambiarAPestana.setVisible(true);
+        
     }//GEN-LAST:event_loginActionPerformed
-
-    private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
-
-    }//GEN-LAST:event_txtContrasenaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,15 +292,16 @@ public class LoginFinal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton login;
+    private bthd.borratuhuelladigital.ButtonRound login;
     private javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }
+
