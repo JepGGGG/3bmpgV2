@@ -127,7 +127,12 @@ public class pestana1UserName extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void noAfectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noAfectaActionPerformed
-        System.exit(0);
+        this.dispose();
+        LoginFinal borrar = new LoginFinal();
+        borrar.setVisible(false);
+        post newPost = new post();
+        newPost.setVisible(true);
+        
     }//GEN-LAST:event_noAfectaActionPerformed
 
     private void siAfectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siAfectaActionPerformed

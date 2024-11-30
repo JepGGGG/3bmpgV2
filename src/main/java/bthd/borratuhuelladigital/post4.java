@@ -129,7 +129,7 @@ public class post4 extends javax.swing.JFrame {
     private void noComprometerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noComprometerActionPerformed
         post5 pasarAPrivacidad = new post5();
         pasarAPrivacidad.setVisible(true);
-        this.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_noComprometerActionPerformed
 
     private void siComprometerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siComprometerActionPerformed

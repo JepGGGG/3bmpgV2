@@ -128,7 +128,7 @@ public class pestanaCancelar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siCancelarActionPerformed
-        System.exit(0);//cambiar a l menu reiniciado
+        this.dispose();
     }//GEN-LAST:event_siCancelarActionPerformed
 
     private void noCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noCancelarActionPerformed
