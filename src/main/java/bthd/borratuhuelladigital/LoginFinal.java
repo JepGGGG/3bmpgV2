@@ -231,16 +231,18 @@ public class LoginFinal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtContrasenaActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-    String userName = txtUserName.getText().trim();
+    String userName = txtUserName.getText().trim(); // Obtén el username
     String correo = txtCorreo.getText().trim();
     String contrasena = new String(txtContrasena.getPassword()).trim();
     String nombre = txtNombre.getText().trim();
+
 
     if (!correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")) {
         javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingresa un correo válido.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         return;
     }
-
+        datosLogin.setUsername(userName);
+        datosLogin.setNombre(nombre);
     if (userName.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || nombre.isEmpty()) {
         javax.swing.JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
         return;
@@ -250,9 +252,9 @@ public class LoginFinal extends javax.swing.JFrame {
 
     pestana1Correo cambiarAPestana = new pestana1Correo();
     cambiarAPestana.setVisible(true);
-        
+    
     }//GEN-LAST:event_loginActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -302,7 +304,7 @@ public class LoginFinal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private bthd.borratuhuelladigital.ButtonRound login;
+    public bthd.borratuhuelladigital.ButtonRound login;
     private javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;

@@ -133,7 +133,8 @@ public class comentario3 extends javax.swing.JFrame {
     }//GEN-LAST:event_noComentarActionPerformed
 
     private void siComentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siComentarActionPerformed
-        //lo que sigue
+        perfil pasarAPerfil = new perfil();
+        pasarAPerfil.setVisible(true);
     }//GEN-LAST:event_siComentarActionPerformed
 
     /**
