@@ -12,6 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.awt.geom.RoundRectangle2D;
+import java.util.Random;
 /**
  *
  * @author jesus
@@ -61,6 +62,10 @@ public class LoginFinal extends javax.swing.JFrame {
         g2.setColor(Color.WHITE); // Fondo blanco
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 50, 50); // Bordes redondeados
         super.paint(g);
+    }
+        public int califiacionUsername(){
+        Random rnd = new Random();
+        return rnd.nextInt(5) + 1;
     }
 
 

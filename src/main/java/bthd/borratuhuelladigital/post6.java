@@ -136,6 +136,8 @@ public class post6 extends javax.swing.JFrame {
 
     private void siPublicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siPublicarActionPerformed
         this.setVisible(false);
+        comentario pasarAElpepe = new comentario();
+        pasarAElpepe.setVisible(true);
     }//GEN-LAST:event_siPublicarActionPerformed
 
     /**
