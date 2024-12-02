@@ -50,6 +50,22 @@ public class post extends javax.swing.JFrame {
         } catch (IOException e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }
+        try {
+            // Carga y escala la imagen
+            File file = new File("src/main/resources/images/ImagenFondoCohete.png");
+            BufferedImage bufferedImage = ImageIO.read(file);
+
+            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+
+            Image scaledImage = imageIcon.getImage().getScaledInstance(
+                buttonRound1.getWidth(), 
+                buttonRound1.getHeight(), 
+                Image.SCALE_SMOOTH
+            );
+            buttonRound1.setIcon(new ImageIcon(scaledImage));
+        } catch (IOException e) {
+            System.err.println("Error al cargar la imagen: " + e.getMessage());
+        }
     }
     
         @Override
@@ -131,28 +147,22 @@ public class post extends javax.swing.JFrame {
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(173, 32, 29)));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Ubicación");
 
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Century Gothic", 0, 16)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(173, 32, 29)));
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Añade una descripción");
 
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(173, 32, 29)));
 
         buttonRound1.setBackground(new java.awt.Color(241, 44, 41));
         buttonRound1.setForeground(new java.awt.Color(255, 255, 255));
-        buttonRound1.setText("PUBLICAR");
         buttonRound1.setBorderColor(new java.awt.Color(241, 44, 41));
         buttonRound1.setColor(new java.awt.Color(241, 44, 41));
         buttonRound1.setColorClick(new java.awt.Color(241, 44, 41));
@@ -177,9 +187,12 @@ public class post extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
                     .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField1)
-                    .addComponent(buttonRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(39, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
