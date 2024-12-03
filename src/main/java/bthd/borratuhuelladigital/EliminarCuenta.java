@@ -80,6 +80,22 @@ public class EliminarCuenta extends javax.swing.JFrame {
         } catch (IOException e) {
             System.err.println("Error al cargar la imagen: " + e.getMessage());
         }   
+          try {
+            // Carga y escala la imagen
+            File file = new File("src/main/resources/images/imagenRegreso.png");
+            BufferedImage bufferedImage = ImageIO.read(file);
+
+            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+
+            Image scaledImage = imageIcon.getImage().getScaledInstance(
+                regresasboton.getWidth(), 
+                regresasboton.getHeight(), 
+                Image.SCALE_SMOOTH
+            );
+            regresasboton.setIcon(new ImageIcon(scaledImage));
+        } catch (IOException e) {
+            System.err.println("Error al cargar la imagen: " + e.getMessage());
+        }   
     // Aplica la forma redondeada
     setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
     }
@@ -99,6 +115,7 @@ public class EliminarCuenta extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         ImagenEliminar = new javax.swing.JLabel();
+        regresasboton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,6 +130,12 @@ public class EliminarCuenta extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        regresasboton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresasbotonActionPerformed(evt);
             }
         });
 
@@ -138,6 +161,10 @@ public class EliminarCuenta extends javax.swing.JFrame {
                         .addGap(294, 294, 294)
                         .addComponent(jLabel3)))
                 .addContainerGap(99, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(regresasboton, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(271, 271, 271))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +179,9 @@ public class EliminarCuenta extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(116, 116, 116)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(143, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(regresasboton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,6 +206,10 @@ public class EliminarCuenta extends javax.swing.JFrame {
        LoginFinal login = new LoginFinal();
        login.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void regresasbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresasbotonActionPerformed
+this.setVisible(false);
+    }//GEN-LAST:event_regresasbotonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,5 +253,6 @@ public class EliminarCuenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton regresasboton;
     // End of variables declaration//GEN-END:variables
 }

@@ -57,7 +57,6 @@ public class pestana1Correo extends javax.swing.JFrame {
 
         siExponer.setBackground(new java.awt.Color(241, 44, 41));
         siExponer.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siExponer.setForeground(new java.awt.Color(0, 0, 0));
         siExponer.setText("SI");
         siExponer.setToolTipText("");
         siExponer.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +67,6 @@ public class pestana1Correo extends javax.swing.JFrame {
 
         noExponer.setBackground(new java.awt.Color(241, 44, 41));
         noExponer.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noExponer.setForeground(new java.awt.Color(0, 0, 0));
         noExponer.setText("NO");
         noExponer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,10 +78,9 @@ public class pestana1Correo extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("¿Seguro que quieres exponerte\na filtraciones de datos?");
+        jTextArea1.setText("¿Seguro que quieres continuar?\n");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0, 0)));
         jScrollPane1.setViewportView(jTextArea1);
@@ -95,7 +92,7 @@ public class pestana1Correo extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(siExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 247, Short.MAX_VALUE)
                 .addComponent(noExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(jPanel1Layout.createSequentialGroup()

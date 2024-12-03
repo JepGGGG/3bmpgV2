@@ -55,7 +55,6 @@ public class pestana1NombreReal extends javax.swing.JFrame {
 
         siExponerse.setBackground(new java.awt.Color(241, 44, 41));
         siExponerse.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siExponerse.setForeground(new java.awt.Color(0, 0, 0));
         siExponerse.setText("SI");
         siExponerse.setToolTipText("");
         siExponerse.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +65,6 @@ public class pestana1NombreReal extends javax.swing.JFrame {
 
         noExponerse.setBackground(new java.awt.Color(241, 44, 41));
         noExponerse.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noExponerse.setForeground(new java.awt.Color(0, 0, 0));
         noExponerse.setText("NO");
         noExponerse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,10 +76,9 @@ public class pestana1NombreReal extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("¿Quieres exponerte a la\nclonación de tu identidad?");
+        jTextArea1.setText("Podrias exponerte a la\nclonación de tu identidad\n¿Quieres continuar?");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jScrollPane1.setViewportView(jTextArea1);
 

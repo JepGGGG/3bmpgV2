@@ -67,6 +67,11 @@
                   </Group>
                   <EmptySpace pref="99" max="32767" attributes="0"/>
               </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="regresasboton" min="-2" pref="202" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -83,7 +88,9 @@
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="85" max="-2" attributes="0"/>
-                  <EmptySpace pref="143" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="regresasboton" min="-2" pref="51" max="-2" attributes="0"/>
+                  <EmptySpace pref="58" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -113,6 +120,11 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="ImagenEliminar">
+        </Component>
+        <Component class="javax.swing.JButton" name="regresasboton">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="regresasbotonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

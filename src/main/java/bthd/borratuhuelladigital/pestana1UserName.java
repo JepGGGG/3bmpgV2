@@ -55,7 +55,6 @@ public class pestana1UserName extends javax.swing.JFrame {
 
         siAfecta.setBackground(new java.awt.Color(241, 44, 41));
         siAfecta.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siAfecta.setForeground(new java.awt.Color(0, 0, 0));
         siAfecta.setText("SI");
         siAfecta.setToolTipText("");
         siAfecta.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +65,6 @@ public class pestana1UserName extends javax.swing.JFrame {
 
         noAfecta.setBackground(new java.awt.Color(241, 44, 41));
         noAfecta.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noAfecta.setForeground(new java.awt.Color(0, 0, 0));
         noAfecta.setText("NO");
         noAfecta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,10 +76,9 @@ public class pestana1UserName extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("¿El user name puede afectar\n tu reputación digital?");
+        jTextArea1.setText("¿El nombre de usuario puede afectar\n tu reputación digital?");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -92,13 +89,13 @@ public class pestana1UserName extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(siAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(noAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
