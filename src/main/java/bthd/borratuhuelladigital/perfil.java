@@ -33,6 +33,68 @@ public class perfil extends javax.swing.JFrame {
     // Establece el username después de inicializar los componentes
     username.setText(datosLogin.getUsername());
     nombreReal.setText(datosLogin.getNombre());
+    
+        califiaciones calif = new califiaciones();
+    int promedio = calif.status();
+
+    // Selecciona la imagen de estrellas correspondiente
+    String imageName = switch (promedio) {
+        case 5 -> "5stars.png";
+        case 4 -> "4stars.png";
+        case 3 -> "3stars.png";
+        case 2 -> "2stars.png";
+        case 1 -> "1star.png";
+        default -> "stars.png";
+    };
+    
+   
+
+    // Carga y muestra la imagen de estrellas
+    try {
+        File file = new File("src/main/resources/images/" + imageName);
+        BufferedImage bufferedImage = ImageIO.read(file);
+        ImageIcon imageIcon = new ImageIcon(bufferedImage);
+        Image scaledImage = imageIcon.getImage().getScaledInstance(
+            jLabel2.getWidth(),
+            jLabel2.getHeight(),
+            Image.SCALE_SMOOTH
+        );
+        jLabel2.setIcon(new ImageIcon(scaledImage));
+    } catch (IOException e) {
+        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
+    }
+    
+    
+        try {
+        File file = new File("src/main/resources/images/perfilFoto.png");
+        BufferedImage bufferedImage = ImageIO.read(file);
+        ImageIcon imageIcon = new ImageIcon(bufferedImage);
+        Image scaledImage = imageIcon.getImage().getScaledInstance(
+            jLabel4.getWidth(),
+            jLabel4.getHeight(),
+            Image.SCALE_SMOOTH
+        );
+        jLabel4.setIcon(new ImageIcon(scaledImage));
+    } catch (IOException e) {
+        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
+    }
+        
+        
+                try {
+        File file = new File("src/main/resources/images/imagenfondojava.png");
+        BufferedImage bufferedImage = ImageIO.read(file);
+        ImageIcon imageIcon = new ImageIcon(bufferedImage);
+        Image scaledImage = imageIcon.getImage().getScaledInstance(
+            jLabel5.getWidth(),
+            jLabel5.getHeight(),
+            Image.SCALE_SMOOTH
+        );
+        jLabel5.setIcon(new ImageIcon(scaledImage));
+    } catch (IOException e) {
+        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
+    }
+        
+        
     }
     
         @Override
@@ -58,9 +120,12 @@ public class perfil extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         username = new javax.swing.JLabel();
         nombreReal = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,21 +146,14 @@ public class perfil extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(173, 32, 29));
         jLabel1.setText("Life Invader");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 126, Short.MAX_VALUE)
-        );
-
         username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         username.setForeground(new java.awt.Color(0, 0, 0));
 
         nombreReal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("OCR A Extended", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(207, 38, 35));
+        jLabel3.setText("STATUS:");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -108,23 +166,33 @@ public class perfil extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 349, Short.MAX_VALUE)))
+                            .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE))))
                 .addContainerGap())
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(nombreReal, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(357, Short.MAX_VALUE))
+                .addGap(45, 45, 45)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -179,8 +247,11 @@ public class perfil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel nombreReal;
     private javax.swing.JLabel username;

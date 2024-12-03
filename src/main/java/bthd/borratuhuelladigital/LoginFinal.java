@@ -108,7 +108,7 @@ public class LoginFinal extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtContrasena = new javax.swing.JPasswordField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        aceptarTerminos = new javax.swing.JCheckBox();
         login = new bthd.borratuhuelladigital.ButtonRound();
         jLabel5 = new javax.swing.JLabel();
 
@@ -128,10 +128,10 @@ public class LoginFinal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setText("Nombre de Usuario");
 
-        txtUserName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUserName.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtUserName.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        txtCorreo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCorreo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtCorreo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,13 +145,13 @@ public class LoginFinal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("Nombre Completo");
 
-        txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel4.setText("Contraseña");
 
-        txtContrasena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtContrasena.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         txtContrasena.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         txtContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,7 +159,12 @@ public class LoginFinal extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setText("Acepto lo terminos y condiciones");
+        aceptarTerminos.setText("Acepto lo terminos y condiciones");
+        aceptarTerminos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarTerminosActionPerformed(evt);
+            }
+        });
 
         login.setForeground(new java.awt.Color(241, 44, 41));
         login.setBorderColor(new java.awt.Color(241, 44, 41));
@@ -183,7 +188,7 @@ public class LoginFinal extends javax.swing.JFrame {
                         .addGap(49, 49, 49)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox1)
+                            .addComponent(aceptarTerminos)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
@@ -199,7 +204,7 @@ public class LoginFinal extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(166, Short.MAX_VALUE)
+                .addContainerGap(151, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -216,7 +221,7 @@ public class LoginFinal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41)
-                .addComponent(jCheckBox1)
+                .addComponent(aceptarTerminos)
                 .addGap(18, 18, 18)
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(126, 126, 126))
@@ -253,33 +258,43 @@ public class LoginFinal extends javax.swing.JFrame {
     }//GEN-LAST:event_txtContrasenaActionPerformed
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-    String userName = txtUserName.getText().trim(); // Obtén el username
-    String correo = txtCorreo.getText().trim();
-    String contrasena = new String(txtContrasena.getPassword()).trim();
-    String nombre = txtNombre.getText().trim();
+        String userName = txtUserName.getText().trim(); // Obtén el username
+        String correo = txtCorreo.getText().trim();
+        String contrasena = new String(txtContrasena.getPassword()).trim();
+        String nombre = txtNombre.getText().trim();
 
+        // Verificar si el checkbox "aceptarTerminos" está seleccionado
+        if (!aceptarTerminos.isSelected()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debes aceptar los términos y condiciones para continuar.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    if (!correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingresa un correo válido.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
-        return;
-    }
+        if (!correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingresa un correo válido.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         datosLogin.setUsername(userName);
         datosLogin.setNombre(nombre);
-    if (userName.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || nombre.isEmpty()) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
-        return;
-    }
 
-    javax.swing.JOptionPane.showMessageDialog(this, "Datos ingresados correctamente.", "Éxito", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        if (userName.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || nombre.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-    pestana1Correo cambiarAPestana = new pestana1Correo();
-    cambiarAPestana.setVisible(true);
-    
+        // Abrir la nueva ventana después de validar los datos correctamente
+        pestana1Correo cambiarAPestana = new pestana1Correo();
+        cambiarAPestana.setVisible(true);
     }//GEN-LAST:event_loginActionPerformed
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoActionPerformed
+
+    private void aceptarTerminosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarTerminosActionPerformed
+        terminosYCondiciones tyc = new terminosYCondiciones();
+        tyc.setVisible(true);
+    }//GEN-LAST:event_aceptarTerminosActionPerformed
     
     /**
      * @param args the command line arguments
@@ -320,7 +335,7 @@ public class LoginFinal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox aceptarTerminos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
