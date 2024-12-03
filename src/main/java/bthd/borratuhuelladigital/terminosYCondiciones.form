@@ -23,12 +23,18 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -36,7 +42,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="23" green="26" red="cf" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
       </Properties>
 
@@ -49,9 +55,9 @@
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="200" max="-2" attributes="0"/>
-                  <EmptySpace pref="274" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="472" max="-2" attributes="0"/>
+                  <Component id="AceptarBotton" min="-2" pref="254" max="-2" attributes="0"/>
+                  <EmptySpace pref="468" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -59,10 +65,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" pref="388" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="621" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  <Component id="AceptarBotton" min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -77,34 +83,21 @@
           <SubComponents>
             <Component class="javax.swing.JTextArea" name="jTextArea1">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="columns" type="int" value="20"/>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="rows" type="int" value="5"/>
                 <Property name="text" type="java.lang.String" value="T&#xc9;RMINOS Y CONDICIONES DE USO DE LA RED SOCIAL &quot;LIFE INVADER&quot;&#xa;&#xa;Al registrarte en nuestra red social, aceptas los t&#xe9;rminos y condiciones aqu&#xed; descritos. Nuestro objetivo es concientizar sobre la huella digital y garantizar un uso responsable de la plataforma.&#xa;&#xa;1. Publicaciones y Comentarios: Persistencia de Contenido&#xa;1.1. Todas las publicaciones y comentarios realizados en la plataforma ser&#xe1;n permanentes y no podr&#xe1;n ser eliminados de forma individual.&#xa;1.2. La &#xfa;nica manera de borrar contenido es a trav&#xe9;s de la eliminaci&#xf3;n total de la cuenta, lo cual eliminar&#xe1; todas las publicaciones, comentarios y datos asociados a ella.&#xa;1.3. Antes de eliminar tu cuenta, tendr&#xe1;s un per&#xed;odo de reflexi&#xf3;n de 7 d&#xed;as h&#xe1;biles. Durante este tiempo, podr&#xe1;s cancelar la solicitud si cambias de opini&#xf3;n.&#xa;1.4. Los contenidos que sean reportados por violar nuestras pol&#xed;ticas ser&#xe1;n revisados por el equipo de moderaci&#xf3;n y podr&#xe1;n ser ocultados o eliminados si infringen las normas comunitarias.&#xa;1.5. Los usuarios son responsables de todo el contenido que publiquen y deber&#xe1;n asegurarse de que este cumpla con las leyes aplicables y las normas de la comunidad.&#xa;&#xa;2. Uso de Informaci&#xf3;n para Fines Comerciales&#xa;2.1. Toda la informaci&#xf3;n que compartas en nuestra plataforma (nombre, intereses, publicaciones, interacciones) puede ser utilizada para fines comerciales, incluyendo pero no limitado a:&#xa;&#xa;Publicidad personalizada.&#xa;Estudios de mercado.&#xa;Desarrollo de productos y servicios.&#xa;2.2. Al aceptar estos t&#xe9;rminos, nos concedes una licencia no exclusiva, mundial y libre de regal&#xed;as para usar, reproducir, distribuir y modificar tu contenido para fines relacionados con la plataforma.&#xa;2.3. Nunca venderemos informaci&#xf3;n personal identificable a terceros sin tu consentimiento expl&#xed;cito, pero colaboramos con socios publicitarios y tecnol&#xf3;gicos para mejorar nuestros servicios.&#xa;2.4. La informaci&#xf3;n recopilada puede incluir tu actividad en la plataforma, datos del dispositivo, ubicaci&#xf3;n aproximada y preferencias de navegaci&#xf3;n.&#xa;2.5. Tienes derecho a solicitar acceso a los datos recopilados sobre ti y pedir una copia en un formato legible, conforme a las leyes de protecci&#xf3;n de datos aplicables.&#xa;3. Concientizaci&#xf3;n sobre la Huella Digital&#xa;3.1. Entiendes y aceptas que cualquier actividad realizada en nuestra plataforma deja una huella digital permanente.&#xa;3.2. Los datos compartidos en l&#xed;nea pueden ser utilizados por terceros, incluso fuera de nuestro control, por lo que debes ser consciente de la informaci&#xf3;n que decides publicar.&#xa;3.3. Life Invader te proporcionar&#xe1; herramientas educativas para entender y gestionar tu huella digital, como informes mensuales de actividad y consejos de seguridad.&#xa;3.4. Nos reservamos el derecho de mostrar m&#xe9;tricas p&#xfa;blicas de actividad para fomentar la transparencia y el aprendizaje comunitario.&#xa;3.5. Las interacciones inapropiadas, acoso o spam ser&#xe1;n marcadas como parte de la huella digital del usuario y podr&#xe1;n conllevar sanciones, como la suspensi&#xf3;n o eliminaci&#xf3;n de la cuenta.&#xa;&#xa;4. Comportamiento y Responsabilidad del Usuario&#xa;4.1. Los usuarios se comprometen a utilizar la plataforma de manera &#xe9;tica y respetuosa hacia otros miembros de la comunidad.&#xa;4.2. Est&#xe1; prohibido:&#xa;&#xa;Publicar contenido ofensivo, discriminatorio o violento.&#xa;Utilizar la plataforma para actividades ilegales o no autorizadas.&#xa;Crear cuentas falsas o suplantar la identidad de otros usuarios.&#xa;4.3. Life Invader no se responsabiliza por el contenido publicado por los usuarios, pero se reserva el derecho de eliminar cuentas que infrinjan las normas.&#xa;4.4. Los usuarios son responsables de mantener la seguridad de sus cuentas, incluyendo el uso de contrase&#xf1;as fuertes y la activaci&#xf3;n de autenticaci&#xf3;n en dos pasos.&#xa;4.5. Las sanciones por violaciones a las normas incluyen advertencias, suspensiones temporales o eliminaci&#xf3;n definitiva de la cuenta.&#xa;5. Modificaciones y Finalizaci&#xf3;n del Servicio&#xa;5.1. Life Invader se reserva el derecho de modificar estos t&#xe9;rminos y condiciones en cualquier momento. Los cambios ser&#xe1;n notificados con 30 d&#xed;as de anticipaci&#xf3;n.&#xa;5.2. Si no est&#xe1;s de acuerdo con los cambios, tendr&#xe1;s la opci&#xf3;n de eliminar tu cuenta antes de que entren en vigor.&#xa;5.3. Nos reservamos el derecho de finalizar el servicio o suspender cuentas que consideremos necesarias para mantener la seguridad y funcionalidad de la plataforma.&#xa;5.4. Los usuarios que decidan cerrar sus cuentas tendr&#xe1;n acceso a una copia de su contenido antes de la eliminaci&#xf3;n, bajo solicitud previa.&#xa;5.5. En caso de que la plataforma sea descontinuada, notificaremos a los usuarios con al menos 90 d&#xed;as de anticipaci&#xf3;n.&#xa;&#xa;Cl&#xe1;usula Final&#xa;Al aceptar estos t&#xe9;rminos, comprendes que Life Invader es una herramienta para fomentar la conciencia digital. Toda actividad realizada aqu&#xed; es responsabilidad del usuario y est&#xe1; sujeta a las leyes y normativas locales e internacionales.&#xa;&#xa;"/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="AceptarBotton">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="ACEPTO"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AceptarBottonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
