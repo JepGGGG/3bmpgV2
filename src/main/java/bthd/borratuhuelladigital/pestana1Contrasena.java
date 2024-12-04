@@ -172,7 +172,7 @@ public class pestana1Contrasena extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new post6().setVisible(true);
+                new pestana1Correo().setVisible(true);
             }
         });
     }

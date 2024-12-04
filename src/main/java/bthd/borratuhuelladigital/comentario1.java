@@ -44,7 +44,6 @@ public class comentario1 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         siSeguro = new javax.swing.JButton();
-        noSeguro = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -56,21 +55,11 @@ public class comentario1 extends javax.swing.JFrame {
         siSeguro.setBackground(new java.awt.Color(241, 44, 41));
         siSeguro.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         siSeguro.setForeground(new java.awt.Color(0, 0, 0));
-        siSeguro.setText("SI");
+        siSeguro.setText("ACEPTAR");
         siSeguro.setToolTipText("");
         siSeguro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 siSeguroActionPerformed(evt);
-            }
-        });
-
-        noSeguro.setBackground(new java.awt.Color(241, 44, 41));
-        noSeguro.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noSeguro.setForeground(new java.awt.Color(0, 0, 0));
-        noSeguro.setText("NO");
-        noSeguro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noSeguroActionPerformed(evt);
             }
         });
 
@@ -81,7 +70,7 @@ public class comentario1 extends javax.swing.JFrame {
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("¿Estás seguro que quieres\npublicar este comentario?");
+        jTextArea1.setText("más que palabras, dejas tu \nmarca");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -92,9 +81,7 @@ public class comentario1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(siSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(noSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addGap(39, 317, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -106,9 +93,7 @@ public class comentario1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(siSeguro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -125,12 +110,6 @@ public class comentario1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void noSeguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noSeguroActionPerformed
-        cancelarComentar pasarAAnular = new cancelarComentar(this);
-        pasarAAnular.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_noSeguroActionPerformed
 
     private void siSeguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siSeguroActionPerformed
         comentario2 pasarAComprometer = new comentario2();
@@ -177,7 +156,6 @@ public class comentario1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton noSeguro;
     private javax.swing.JButton siSeguro;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,7 +44,6 @@ public class post1 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         siPublicar = new javax.swing.JButton();
-        noPublicar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -56,21 +55,11 @@ public class post1 extends javax.swing.JFrame {
         siPublicar.setBackground(new java.awt.Color(241, 44, 41));
         siPublicar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         siPublicar.setForeground(new java.awt.Color(0, 0, 0));
-        siPublicar.setText("SI");
+        siPublicar.setText("ACEPTAR");
         siPublicar.setToolTipText("");
         siPublicar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 siPublicarActionPerformed(evt);
-            }
-        });
-
-        noPublicar.setBackground(new java.awt.Color(241, 44, 41));
-        noPublicar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noPublicar.setForeground(new java.awt.Color(0, 0, 0));
-        noPublicar.setText("NO");
-        noPublicar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noPublicarActionPerformed(evt);
             }
         });
 
@@ -81,7 +70,7 @@ public class post1 extends javax.swing.JFrame {
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("¿Seguro que quieres publicar\neste post?");
+        jTextArea1.setText("Todos podrán ver este post");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -92,9 +81,7 @@ public class post1 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(siPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(noPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addGap(39, 317, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -106,9 +93,7 @@ public class post1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(siPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -131,12 +116,6 @@ public class post1 extends javax.swing.JFrame {
         pasarACualquiera.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_siPublicarActionPerformed
-
-    private void noPublicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noPublicarActionPerformed
-    pestanaCancelar cancelar = new pestanaCancelar(this); // Pasar "this" como frame actual
-    cancelar.setVisible(true);
-    this.setVisible(false);
-    }//GEN-LAST:event_noPublicarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,7 +157,6 @@ public class post1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton noPublicar;
     private javax.swing.JButton siPublicar;
     // End of variables declaration//GEN-END:variables
 }

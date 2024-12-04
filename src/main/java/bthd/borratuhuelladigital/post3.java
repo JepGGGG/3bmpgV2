@@ -44,7 +44,6 @@ public class post3 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         siContinuar = new javax.swing.JButton();
-        noContinuar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -64,16 +63,6 @@ public class post3 extends javax.swing.JFrame {
             }
         });
 
-        noContinuar.setBackground(new java.awt.Color(241, 44, 41));
-        noContinuar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noContinuar.setForeground(new java.awt.Color(0, 0, 0));
-        noContinuar.setText("NO");
-        noContinuar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noContinuarActionPerformed(evt);
-            }
-        });
-
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
@@ -81,7 +70,7 @@ public class post3 extends javax.swing.JFrame {
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("Podrán saber tu ubicación actual\n¿Deseas continuar?");
+        jTextArea1.setText("Lo que posteas habla de ti a los\ndemás.");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -92,9 +81,7 @@ public class post3 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(siContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(noContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addGap(39, 317, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -106,9 +93,7 @@ public class post3 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(siContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -126,14 +111,8 @@ public class post3 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void noContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noContinuarActionPerformed
-        pestanaCancelar pasarACancelar = new pestanaCancelar(this);
-        pasarACancelar.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_noContinuarActionPerformed
-
     private void siContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siContinuarActionPerformed
-        post4 pasarAComprometer = new post4();
+        comentario pasarAComprometer = new comentario();
         pasarAComprometer.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_siContinuarActionPerformed
@@ -169,7 +148,7 @@ public class post3 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new post6().setVisible(true);
+                new post3().setVisible(true);
             }
         });
     }
@@ -178,7 +157,6 @@ public class post3 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton noContinuar;
     private javax.swing.JButton siContinuar;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,7 +44,6 @@ public class pestana1UserName extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         siAfecta = new javax.swing.JButton();
-        noAfecta = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -55,7 +54,7 @@ public class pestana1UserName extends javax.swing.JFrame {
 
         siAfecta.setBackground(new java.awt.Color(241, 44, 41));
         siAfecta.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siAfecta.setText("SI");
+        siAfecta.setText("ACEPTAR");
         siAfecta.setToolTipText("");
         siAfecta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,22 +62,14 @@ public class pestana1UserName extends javax.swing.JFrame {
             }
         });
 
-        noAfecta.setBackground(new java.awt.Color(241, 44, 41));
-        noAfecta.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noAfecta.setText("NO");
-        noAfecta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noAfectaActionPerformed(evt);
-            }
-        });
-
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("¿El nombre de usuario puede afectar\n tu reputación digital?");
+        jTextArea1.setText("Tu correo registrado deja una \nmarca permanente");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -89,13 +80,11 @@ public class pestana1UserName extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(siAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(noAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,9 +92,7 @@ public class pestana1UserName extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(siAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -113,7 +100,9 @@ public class pestana1UserName extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,17 +112,8 @@ public class pestana1UserName extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void noAfectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noAfectaActionPerformed
-        this.dispose();
-        LoginFinal borrar = new LoginFinal();
-        borrar.setVisible(false);
-        post newPost = new post();
-        newPost.setVisible(true);
-        
-    }//GEN-LAST:event_noAfectaActionPerformed
-
     private void siAfectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siAfectaActionPerformed
-        pestana2UserName pasarACambiar = new pestana2UserName();
+        post pasarACambiar = new post();
         pasarACambiar.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_siAfectaActionPerformed
@@ -169,7 +149,7 @@ public class pestana1UserName extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new post6().setVisible(true);
+                new pestana1UserName().setVisible(true);
             }
         });
     }
@@ -178,7 +158,6 @@ public class pestana1UserName extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton noAfecta;
     private javax.swing.JButton siAfecta;
     // End of variables declaration//GEN-END:variables
 }

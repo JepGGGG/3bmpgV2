@@ -131,9 +131,9 @@ public class pestana2Contrasena extends javax.swing.JFrame {
     }//GEN-LAST:event_siCambiarActionPerformed
 
     private void noCambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noCambiarActionPerformed
-    pestanaSalir cambiarASalir = new pestanaSalir(this);
-    cambiarASalir.setVisible(true);
-    this.setVisible(false); // Oculta el frame actual
+        pestana1NombreReal mmya = new pestana1NombreReal();
+        mmya.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_noCambiarActionPerformed
 
     /**
@@ -167,7 +167,7 @@ public class pestana2Contrasena extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new post6().setVisible(true);
+                new pestana2Contrasena().setVisible(true);
             }
         });
     }

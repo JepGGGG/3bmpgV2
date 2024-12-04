@@ -45,7 +45,6 @@ public class post6 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         siPublicar = new javax.swing.JButton();
-        noPublicar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -62,16 +61,6 @@ public class post6 extends javax.swing.JFrame {
         siPublicar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 siPublicarActionPerformed(evt);
-            }
-        });
-
-        noPublicar.setBackground(new java.awt.Color(241, 44, 41));
-        noPublicar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noPublicar.setForeground(new java.awt.Color(0, 0, 0));
-        noPublicar.setText("NO");
-        noPublicar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noPublicarActionPerformed(evt);
             }
         });
 
@@ -94,9 +83,7 @@ public class post6 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(siPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(noPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addGap(39, 317, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -108,9 +95,7 @@ public class post6 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(siPublicar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -127,12 +112,6 @@ public class post6 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void noPublicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noPublicarActionPerformed
-        pestanaCancelar pasarACancelar = new pestanaCancelar(this);
-        pasarACancelar.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_noPublicarActionPerformed
 
     private void siPublicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siPublicarActionPerformed
         this.setVisible(false);
@@ -180,7 +159,6 @@ public class post6 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton noPublicar;
     private javax.swing.JButton siPublicar;
     // End of variables declaration//GEN-END:variables
 }

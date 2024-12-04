@@ -44,7 +44,6 @@ public class post5 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         siAceptar = new javax.swing.JButton();
-        noAceptar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -61,16 +60,6 @@ public class post5 extends javax.swing.JFrame {
         siAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 siAceptarActionPerformed(evt);
-            }
-        });
-
-        noAceptar.setBackground(new java.awt.Color(241, 44, 41));
-        noAceptar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noAceptar.setForeground(new java.awt.Color(0, 0, 0));
-        noAceptar.setText("NO");
-        noAceptar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noAceptarActionPerformed(evt);
             }
         });
 
@@ -92,9 +81,7 @@ public class post5 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(siAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(noAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addGap(39, 317, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -106,9 +93,7 @@ public class post5 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(siAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -131,12 +116,6 @@ public class post5 extends javax.swing.JFrame {
         pasarAPublicar.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_siAceptarActionPerformed
-
-    private void noAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noAceptarActionPerformed
-        pestanaCancelar pasarACancelar = new pestanaCancelar(this);
-        pasarACancelar.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_noAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,7 +157,6 @@ public class post5 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton noAceptar;
     private javax.swing.JButton siAceptar;
     // End of variables declaration//GEN-END:variables
 }

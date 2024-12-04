@@ -46,7 +46,6 @@ public class pestana1Correo extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         siExponer = new javax.swing.JButton();
-        noExponer = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -57,7 +56,7 @@ public class pestana1Correo extends javax.swing.JFrame {
 
         siExponer.setBackground(new java.awt.Color(241, 44, 41));
         siExponer.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siExponer.setText("SI");
+        siExponer.setText("ACEPTAR");
         siExponer.setToolTipText("");
         siExponer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,22 +64,14 @@ public class pestana1Correo extends javax.swing.JFrame {
             }
         });
 
-        noExponer.setBackground(new java.awt.Color(241, 44, 41));
-        noExponer.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noExponer.setText("NO");
-        noExponer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noExponerActionPerformed(evt);
-            }
-        });
-
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("¿Seguro que quieres continuar?\n");
+        jTextArea1.setText("Tu nombre de usuario es tu \nidentidad digital.");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jTextArea1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0, 0)));
         jScrollPane1.setViewportView(jTextArea1);
@@ -90,25 +81,21 @@ public class pestana1Correo extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(siExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 247, Short.MAX_VALUE)
-                .addComponent(noExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addComponent(siExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(siExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -131,12 +118,6 @@ public class pestana1Correo extends javax.swing.JFrame {
         cambiarAContrasena.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_siExponerActionPerformed
-
-    private void noExponerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noExponerActionPerformed
-    pestanaSalir cambiarASalir = new pestanaSalir(this);
-    cambiarASalir.setVisible(true);
-    this.setVisible(false); // Oculta el frame actual
-    }//GEN-LAST:event_noExponerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,7 +158,6 @@ public class pestana1Correo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton noExponer;
     private javax.swing.JButton siExponer;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,7 +44,6 @@ public class comentario3 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         siComentar = new javax.swing.JButton();
-        noComentar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -56,21 +55,11 @@ public class comentario3 extends javax.swing.JFrame {
         siComentar.setBackground(new java.awt.Color(241, 44, 41));
         siComentar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         siComentar.setForeground(new java.awt.Color(0, 0, 0));
-        siComentar.setText("SI");
+        siComentar.setText("ACEPTAR");
         siComentar.setToolTipText("");
         siComentar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 siComentarActionPerformed(evt);
-            }
-        });
-
-        noComentar.setBackground(new java.awt.Color(241, 44, 41));
-        noComentar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noComentar.setForeground(new java.awt.Color(0, 0, 0));
-        noComentar.setText("NO");
-        noComentar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noComentarActionPerformed(evt);
             }
         });
 
@@ -81,7 +70,7 @@ public class comentario3 extends javax.swing.JFrame {
         jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
-        jTextArea1.setText("Será visible para TODOS\n¿Deseas comentarlo?");
+        jTextArea1.setText("Será visible para TODOS\n");
         jTextArea1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jScrollPane1.setViewportView(jTextArea1);
 
@@ -92,9 +81,7 @@ public class comentario3 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(siComentar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(noComentar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addGap(39, 317, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1)
@@ -106,9 +93,7 @@ public class comentario3 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noComentar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siComentar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(siComentar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
 
@@ -125,12 +110,6 @@ public class comentario3 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void noComentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noComentarActionPerformed
-        cancelarComentar pasarAAnular = new cancelarComentar(this);
-        pasarAAnular.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_noComentarActionPerformed
 
     private void siComentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siComentarActionPerformed
         perfil pasarAPerfil = new perfil();
@@ -167,7 +146,7 @@ public class comentario3 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new pestana1Correo().setVisible(true);
+                new comentario3().setVisible(true);
             }
         });
     }
@@ -176,7 +155,6 @@ public class comentario3 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton noComentar;
     private javax.swing.JButton siComentar;
     // End of variables declaration//GEN-END:variables
 }
