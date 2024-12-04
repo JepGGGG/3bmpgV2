@@ -113,9 +113,8 @@ public class pestana1UserName extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siAfectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siAfectaActionPerformed
-        post pasarACambiar = new post();
-        pasarACambiar.setVisible(true);
-        this.setVisible(false);
+        new post().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_siAfectaActionPerformed
 
     /**

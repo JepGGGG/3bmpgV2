@@ -112,9 +112,8 @@ public class post3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siContinuarActionPerformed
-        comentario pasarAComprometer = new comentario();
-        pasarAComprometer.setVisible(true);
-        this.setVisible(false);
+        new comentario().setVisible(true);
+        dispose();
     }//GEN-LAST:event_siContinuarActionPerformed
 
     /**

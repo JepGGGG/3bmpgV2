@@ -112,9 +112,8 @@ public class post1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siPublicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siPublicarActionPerformed
-        post2 pasarACualquiera = new post2();
-        pasarACualquiera.setVisible(true);
-        this.setVisible(false);
+        new post2().setVisible(true);
+        dispose();
     }//GEN-LAST:event_siPublicarActionPerformed
 
     /**

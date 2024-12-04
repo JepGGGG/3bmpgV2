@@ -307,8 +307,7 @@ public class perfil extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jLabel6ActionPerformed
-        EliminarCuenta xd = new EliminarCuenta();
-        xd.setVisible(true);
+        new EliminarCuenta().setVisible(true);
     }//GEN-LAST:event_jLabel6ActionPerformed
 
     /**

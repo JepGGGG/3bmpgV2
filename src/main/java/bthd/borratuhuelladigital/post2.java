@@ -55,7 +55,7 @@ public class post2 extends javax.swing.JFrame {
         siSe.setBackground(new java.awt.Color(241, 44, 41));
         siSe.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
         siSe.setForeground(new java.awt.Color(0, 0, 0));
-        siSe.setText("SI");
+        siSe.setText("ACEPTAR");
         siSe.setToolTipText("");
         siSe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,9 +112,8 @@ public class post2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siSeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siSeActionPerformed
-       post3 pasarAUbicacion = new post3();
-       pasarAUbicacion.setVisible(true);
-       this.setVisible(false);
+       new post3().setVisible(true);
+       dispose();
     }//GEN-LAST:event_siSeActionPerformed
 
     /**

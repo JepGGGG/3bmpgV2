@@ -199,16 +199,14 @@ public class EliminarCuenta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        for (Window window : Window.getWindows()){
+        for (Window window : Window.getWindows()) {
             window.setVisible(false);
         }
-        
-       LoginFinal login = new LoginFinal();
-       login.setVisible(true);
+        new LoginFinal().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void regresasbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresasbotonActionPerformed
-this.setVisible(false);
+        setVisible(false);
     }//GEN-LAST:event_regresasbotonActionPerformed
 
     /**

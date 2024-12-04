@@ -245,38 +245,34 @@ public class LoginFinal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        String userName = txtUserName.getText().trim(); // Obtén el username
+        String userName = txtUserName.getText().trim();
         String correo = txtCorreo.getText().trim();
         String contrasena = new String(txtContrasena.getPassword()).trim();
         String nombre = txtNombre.getText().trim();
 
-        // Verificar si el checkbox "aceptarTerminos" está seleccionado
         if (!aceptarTerminos.isSelected()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Debes aceptar los términos y condiciones para continuar.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            mostrarError("Debes aceptar los términos y condiciones para continuar.");
             return;
         }
 
-        if (!correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingresa un correo válido.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        if (!validarCorreo(correo)) {
+            mostrarError("Por favor, ingresa un correo válido.");
+            return;
+        }
+
+        if (userName.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || nombre.isEmpty()) {
+            mostrarError("Todos los campos son obligatorios.");
             return;
         }
 
         datosLogin.setUsername(userName);
         datosLogin.setNombre(nombre);
 
-        if (userName.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || nombre.isEmpty()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // Abrir la nueva ventana después de validar los datos correctamente
-        pestana1Correo cambiarAPestana = new pestana1Correo();
-        cambiarAPestana.setVisible(true);
+        new pestana1Correo().setVisible(true);
     }//GEN-LAST:event_loginActionPerformed
 
     private void aceptarTerminosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarTerminosActionPerformed
-        terminosYCondiciones tyc = new terminosYCondiciones();
-        tyc.setVisible(true);
+         new terminosYCondiciones().setVisible(true);
     }//GEN-LAST:event_aceptarTerminosActionPerformed
 
     private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
@@ -286,7 +282,13 @@ public class LoginFinal extends javax.swing.JFrame {
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoActionPerformed
-    
+    private void mostrarError(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+
+    private boolean validarCorreo(String correo) {
+        return correo.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
+    }
     /**
      * @param args the command line arguments
      */

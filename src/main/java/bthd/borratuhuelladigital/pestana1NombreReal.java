@@ -111,9 +111,8 @@ public class pestana1NombreReal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siExponerseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siExponerseActionPerformed
-        pestana1UserName pasarAUserName = new pestana1UserName();
-        pasarAUserName.setVisible(true);
-        this.setVisible(false);
+        new pestana1UserName().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_siExponerseActionPerformed
 
     /**

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package bthd.borratuhuelladigital;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -12,27 +8,13 @@ import java.io.IOException;
 import java.awt.geom.RoundRectangle2D;
 import java.util.Random;
 
-/**
- *
- * @author jaxt3
- */
 public class comentario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form post
-     */
     public comentario() {
-        // Elimina la barra de título y configura bordes redondeados
-    setUndecorated(true);
-    initComponents(); // Inicializa los componentes del JFrame
-    
-    // Centra el JFrame en la pantalla
-    setLocationRelativeTo(null); 
-    
-    // Asegúrate de que el tamaño del JFrame esté calculado
-    pack();
-    
-    // Aplica la forma redondeada
+        setUndecorated(true);
+        initComponents();
+        setLocationRelativeTo(null);
+        pack();
     setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
         try {
             // Carga y escala la imagen
@@ -227,8 +209,7 @@ public class comentario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void comentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comentarActionPerformed
-        comentario1 pasarACaca = new comentario1();
-        pasarACaca.setVisible(true);
+        new comentario1().setVisible(true);
     }//GEN-LAST:event_comentarActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

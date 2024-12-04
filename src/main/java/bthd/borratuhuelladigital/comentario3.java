@@ -112,8 +112,8 @@ public class comentario3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siComentarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siComentarActionPerformed
-        perfil pasarAPerfil = new perfil();
-        pasarAPerfil.setVisible(true);
+        new perfil().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_siComentarActionPerformed
 
     /**

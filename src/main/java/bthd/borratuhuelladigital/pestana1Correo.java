@@ -114,9 +114,8 @@ public class pestana1Correo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siExponerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siExponerActionPerformed
-        pestana1Contrasena cambiarAContrasena = new pestana1Contrasena();
-        cambiarAContrasena.setVisible(true);
-        this.setVisible(false);
+        new pestana1Contrasena().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_siExponerActionPerformed
 
     /**

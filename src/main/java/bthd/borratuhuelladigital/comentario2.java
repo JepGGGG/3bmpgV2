@@ -112,9 +112,8 @@ public class comentario2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void siComprometerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siComprometerActionPerformed
-        comentario3 pasarAComentar = new comentario3();
-        pasarAComentar.setVisible(true);
-        this.setVisible(false);
+        new comentario3().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_siComprometerActionPerformed
 
     /**

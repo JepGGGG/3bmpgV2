@@ -222,8 +222,7 @@ public class post extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonRound1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRound1ActionPerformed
-        post1 pasarAPostear = new post1();
-        pasarAPostear.setVisible(true);
+        new post1().setVisible(true);
     }//GEN-LAST:event_buttonRound1ActionPerformed
 
     /**

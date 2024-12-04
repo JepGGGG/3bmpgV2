@@ -131,9 +131,8 @@ public class pestana2Contrasena extends javax.swing.JFrame {
     }//GEN-LAST:event_siCambiarActionPerformed
 
     private void noCambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noCambiarActionPerformed
-        pestana1NombreReal mmya = new pestana1NombreReal();
-        mmya.setVisible(true);
-        this.setVisible(false);
+        new pestana1NombreReal().setVisible(true);
+        dispose();
     }//GEN-LAST:event_noCambiarActionPerformed
 
     /**

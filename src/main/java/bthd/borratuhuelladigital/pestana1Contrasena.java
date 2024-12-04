@@ -130,17 +130,18 @@ public class pestana1Contrasena extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void noContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noContrasenaActionPerformed
-        pestana2Contrasena cambiarACambiar = new pestana2Contrasena();
-        cambiarACambiar.setVisible(true);
-        this.setVisible(false);
+        cambiarVentana(new pestana2Contrasena());
     }//GEN-LAST:event_noContrasenaActionPerformed
 
     private void siContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siContrasenaActionPerformed
-        pestana1NombreReal pasarANombreReal = new pestana1NombreReal();
-        pasarANombreReal.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_siContrasenaActionPerformed
+        cambiarVentana(new pestana1NombreReal());
 
+    }//GEN-LAST:event_siContrasenaActionPerformed
+   
+    private void cambiarVentana(javax.swing.JFrame nuevaVentana) {
+        nuevaVentana.setVisible(true);
+        this.setVisible(false);
+}
     /**
      * @param args the command line arguments
      */
