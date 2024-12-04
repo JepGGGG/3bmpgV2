@@ -32,70 +32,61 @@ public class EliminarCuenta extends javax.swing.JFrame {
     // Asegúrate de que el tamaño del JFrame esté calculado
     pack();
     setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
-        try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/LogoLifeInvader.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
+try {
+    // Usa getResource para cargar la imagen del logo
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/LogoLifeInvader.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        LifeInvader.getWidth(), 
+        LifeInvader.getHeight(), 
+        Image.SCALE_SMOOTH
+    );
+    LifeInvader.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen del LogoLifeInvader: " + e.getMessage());
+}
 
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+try {
+    // Usa getResource para cargar la imagen de eliminar
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenEliminar.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        ImagenEliminar.getWidth(), 
+        ImagenEliminar.getHeight(), 
+        Image.SCALE_SMOOTH
+    );
+    ImagenEliminar.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen ImagenEliminar: " + e.getMessage());
+}
 
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                LifeInvader.getWidth(), 
-                LifeInvader.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            LifeInvader.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }    
-         try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/ImagenEliminar.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
+try {
+    // Usa getResource para cargar la imagen del botón de eliminar
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/botonEliminar.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        jButton1.getWidth(), 
+        jButton1.getHeight(), 
+        Image.SCALE_SMOOTH
+    );
+    jButton1.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen botonEliminar: " + e.getMessage());
+}
 
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                ImagenEliminar.getWidth(), 
-                ImagenEliminar.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            ImagenEliminar.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }   
-          try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/botonEliminar.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
-
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                jButton1.getWidth(), 
-                jButton1.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            jButton1.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }   
-          try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/imagenRegreso.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
-
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                regresasboton.getWidth(), 
-                regresasboton.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            regresasboton.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }   
+try {
+    // Usa getResource para cargar la imagen de regreso
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/imagenRegreso.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        regresasboton.getWidth(), 
+        regresasboton.getHeight(), 
+        Image.SCALE_SMOOTH
+    );
+    regresasboton.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen imagenRegreso: " + e.getMessage());
+}  
     // Aplica la forma redondeada
     setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
     }

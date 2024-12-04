@@ -36,34 +36,34 @@ public class LoginFinal extends javax.swing.JFrame {
     
     // Aplica la forma redondeada
     setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
-        try {
-            File file = new File("src/main/resources/images/ImagenLogoColor.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                jLabel5.getWidth(), 
-                jLabel5.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            jLabel5.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
+    try {
+        // Usa getResource para cargar desde el JAR
+        BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenLogoColor.png"));
+        ImageIcon imageIcon = new ImageIcon(bufferedImage);
+        Image scaledImage = imageIcon.getImage().getScaledInstance(
+            jLabel5.getWidth(),
+            jLabel5.getHeight(),
+            Image.SCALE_SMOOTH
+        );
+        jLabel5.setIcon(new ImageIcon(scaledImage));
+    } catch (IOException e) {
+        System.err.println("Error al cargar la imagen: " + e.getMessage());
+    }
         
         
-        try {
-            File file = new File("src/main/resources/images/BotonImagenRojoFinal.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                login.getWidth(), 
-                login.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            login.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
+try {
+    // Usa getResource para cargar desde el JAR
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/BotonImagenRojoFinal.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        login.getWidth(), 
+        login.getHeight(), 
+        Image.SCALE_SMOOTH
+    );
+    login.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen: " + e.getMessage());
+}
         
         
 

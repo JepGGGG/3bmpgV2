@@ -16,70 +16,58 @@ public class comentario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         pack();
     setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
-        try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/fotoComentario.jpg");
-            BufferedImage bufferedImage = ImageIO.read(file);
+    try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/fotoComentario.jpg"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        jLabel2.getWidth(), 
+        jLabel2.getHeight(), 
+        Image.SCALE_SMOOTH
+    );
+    jLabel2.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen fotoComentario: " + e.getMessage());
+}
 
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenBotonComentar.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        comentar.getWidth(), 
+        comentar.getHeight(), 
+        Image.SCALE_SMOOTH
+    );
+    comentar.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen ImagenBotonComentar: " + e.getMessage());
+}
 
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                jLabel2.getWidth(), 
-                jLabel2.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            jLabel2.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-        try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/ImagenBotonComentar.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenComentarColor.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        ImagenComentario.getWidth(), 
+        ImagenComentario.getHeight(), 
+        Image.SCALE_SMOOTH
+    );
+    ImagenComentario.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen ImagenComentarColor: " + e.getMessage());
+}
 
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenReacciones.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        risasjaja.getWidth(), 
+        risasjaja.getHeight(), 
+        Image.SCALE_SMOOTH
+    );
+    risasjaja.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen ImagenReacciones: " + e.getMessage());
+}
 
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                comentar.getWidth(), 
-                comentar.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            comentar.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-         try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/ImagenComentarColor.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
-
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                ImagenComentario.getWidth(), 
-                ImagenComentario.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            ImagenComentario.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-         try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/ImagenReacciones.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
-
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                risasjaja.getWidth(), 
-                risasjaja.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            risasjaja.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
     }
     
         @Override

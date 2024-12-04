@@ -34,22 +34,19 @@ public class terminosYCondiciones extends javax.swing.JFrame {
     
     // Aplica la forma redondeada
     setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
-        try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/ImagenAceptarFinal.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenAceptarFinal.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        AceptarBotton.getWidth(),
+        AceptarBotton.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    AceptarBotton.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen ImagenAceptarFinal.png: " + e.getMessage());
+}
 
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                AceptarBotton.getWidth(), 
-                AceptarBotton.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            AceptarBotton.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
     }
 
     /**

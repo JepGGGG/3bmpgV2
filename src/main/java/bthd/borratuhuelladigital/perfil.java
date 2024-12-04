@@ -50,118 +50,96 @@ public class perfil extends javax.swing.JFrame {
    
 
     // Carga y muestra la imagen de estrellas
-    try {
-        File file = new File("src/main/resources/images/" + imageName);
-        BufferedImage bufferedImage = ImageIO.read(file);
-        ImageIcon imageIcon = new ImageIcon(bufferedImage);
-        Image scaledImage = imageIcon.getImage().getScaledInstance(
-            jLabel2.getWidth(),
-            jLabel2.getHeight(),
-            Image.SCALE_SMOOTH
-        );
-        jLabel2.setIcon(new ImageIcon(scaledImage));
-    } catch (IOException e) {
-        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
-    }
-    
-    
-        try {
-        File file = new File("src/main/resources/images/perfilFoto.png");
-        BufferedImage bufferedImage = ImageIO.read(file);
-        ImageIcon imageIcon = new ImageIcon(bufferedImage);
-        Image scaledImage = imageIcon.getImage().getScaledInstance(
-            jLabel4.getWidth(),
-            jLabel4.getHeight(),
-            Image.SCALE_SMOOTH
-        );
-        jLabel4.setIcon(new ImageIcon(scaledImage));
-    } catch (IOException e) {
-        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
-    }
-        
-        
-                try {
-        File file = new File("src/main/resources/images/perfilFoto.png");
-        BufferedImage bufferedImage = ImageIO.read(file);
-        ImageIcon imageIcon = new ImageIcon(bufferedImage);
-        Image scaledImage = imageIcon.getImage().getScaledInstance(
-            jLabel4.getWidth(),
-            jLabel4.getHeight(),
-            Image.SCALE_SMOOTH
-        );
-        jLabel4.setIcon(new ImageIcon(scaledImage));
-    } catch (IOException e) {
-        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
-    }
-        
-        
-                try {
-        File file = new File("src/main/resources/images/config.png");
-        BufferedImage bufferedImage = ImageIO.read(file);
-        ImageIcon imageIcon = new ImageIcon(bufferedImage);
-        Image scaledImage = imageIcon.getImage().getScaledInstance(
-            jLabel6.getWidth(),
-            jLabel6.getHeight(),
-            Image.SCALE_SMOOTH
-        );
-        jLabel6.setIcon(new ImageIcon(scaledImage));
-    } catch (IOException e) {
-        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
-    }
-                
-                
-                        try {
-        File file = new File("src/main/resources/images/imagenfondojava.png");
-        BufferedImage bufferedImage = ImageIO.read(file);
-        ImageIcon imageIcon = new ImageIcon(bufferedImage);
-        Image scaledImage = imageIcon.getImage().getScaledInstance(
-            jLabel5.getWidth(),
-            jLabel5.getHeight(),
-            Image.SCALE_SMOOTH
-        );
-        jLabel5.setIcon(new ImageIcon(scaledImage));
-    } catch (IOException e) {
-        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
-    }
-    try {
-        File file = new File("src/main/resources/images/LogoLifeInvader.png");
-        BufferedImage bufferedImage = ImageIO.read(file);
-        ImageIcon imageIcon = new ImageIcon(bufferedImage);
-        Image scaledImage = imageIcon.getImage().getScaledInstance(
-            ImagenLife.getWidth(),
-            ImagenLife.getHeight(),
-            Image.SCALE_SMOOTH
-        );
-        ImagenLife.setIcon(new ImageIcon(scaledImage));
-    } catch (IOException e) {
-        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
-    }
-     try {
-        File file = new File("src/main/resources/images/ImagenStatus.png");
-        BufferedImage bufferedImage = ImageIO.read(file);
-        ImageIcon imageIcon = new ImageIcon(bufferedImage);
-        Image scaledImage = imageIcon.getImage().getScaledInstance(
-            StatusLabel.getWidth(),
-            StatusLabel.getHeight(),
-            Image.SCALE_SMOOTH
-        );
-        StatusLabel.setIcon(new ImageIcon(scaledImage));
-    } catch (IOException e) {
-        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
-    }
-     try {
-        File file = new File("src/main/resources/images/ImagenGuia.png");
-        BufferedImage bufferedImage = ImageIO.read(file);
-        ImageIcon imageIcon = new ImageIcon(bufferedImage);
-        Image scaledImage = imageIcon.getImage().getScaledInstance(
-            GuiaEliminarCuenta.getWidth(),
-            GuiaEliminarCuenta.getHeight(),
-            Image.SCALE_SMOOTH
-        );
-        GuiaEliminarCuenta.setIcon(new ImageIcon(scaledImage));
-    } catch (IOException e) {
-        System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
-    }
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/" + imageName));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        jLabel2.getWidth(),
+        jLabel2.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    jLabel2.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen de estrellas: " + e.getMessage());
+}
+
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/perfilFoto.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        jLabel4.getWidth(),
+        jLabel4.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    jLabel4.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen perfilFoto: " + e.getMessage());
+}
+
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/config.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        jLabel6.getWidth(),
+        jLabel6.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    jLabel6.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen config: " + e.getMessage());
+}
+
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/imagenfondojava.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        jLabel5.getWidth(),
+        jLabel5.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    jLabel5.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen imagenfondojava: " + e.getMessage());
+}
+
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/LogoLifeInvader.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        ImagenLife.getWidth(),
+        ImagenLife.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    ImagenLife.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen LogoLifeInvader: " + e.getMessage());
+}
+
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenStatus.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        StatusLabel.getWidth(),
+        StatusLabel.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    StatusLabel.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen ImagenStatus: " + e.getMessage());
+}
+
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenGuia.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        GuiaEliminarCuenta.getWidth(),
+        GuiaEliminarCuenta.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    GuiaEliminarCuenta.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen ImagenGuia: " + e.getMessage());
+}
         
         
     }

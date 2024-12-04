@@ -34,51 +34,44 @@ public class post extends javax.swing.JFrame {
     
     // Aplica la forma redondeada
     setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
-        try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/foto.jpeg");
-            BufferedImage bufferedImage = ImageIO.read(file);
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/foto.jpeg"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        jLabel2.getWidth(),
+        jLabel2.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    jLabel2.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen foto.jpeg: " + e.getMessage());
+}
 
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenFondoCohete.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        buttonRound1.getWidth(),
+        buttonRound1.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    buttonRound1.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen ImagenFondoCohete.png: " + e.getMessage());
+}
 
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                jLabel2.getWidth(), 
-                jLabel2.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            jLabel2.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-        try {
-            // Carga y escala la imagen
-            File file = new File("src/main/resources/images/ImagenFondoCohete.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
-
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                buttonRound1.getWidth(), 
-                buttonRound1.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            buttonRound1.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
-        try {
-            File file = new File("src/main/resources/images/ImagenTipografiaLogoPost.png");
-            BufferedImage bufferedImage = ImageIO.read(file);
-            ImageIcon imageIcon = new ImageIcon(bufferedImage);
-            Image scaledImage = imageIcon.getImage().getScaledInstance(
-                ImagenPost.getWidth(), 
-                ImagenPost.getHeight(), 
-                Image.SCALE_SMOOTH
-            );
-            ImagenPost.setIcon(new ImageIcon(scaledImage));
-        } catch (IOException e) {
-            System.err.println("Error al cargar la imagen: " + e.getMessage());
-        }
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/ImagenTipografiaLogoPost.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        ImagenPost.getWidth(),
+        ImagenPost.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    ImagenPost.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen ImagenTipografiaLogoPost.png: " + e.getMessage());
+}
     }
     
         @Override
