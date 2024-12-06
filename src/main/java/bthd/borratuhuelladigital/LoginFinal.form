@@ -87,7 +87,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="txtUserName" pref="380" max="32767" attributes="0"/>
@@ -99,9 +99,13 @@
                           <Component id="txtNombre" alignment="0" pref="380" max="32767" attributes="0"/>
                           <Component id="txtContrasena" alignment="0" pref="380" max="32767" attributes="0"/>
                           <Component id="txtCorreo" alignment="0" pref="380" max="32767" attributes="0"/>
-                          <Component id="login" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="401" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="256" max="32767" attributes="0"/>
+                      <Component id="login" min="-2" pref="345" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -126,9 +130,9 @@
                       <Component id="txtNombre" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="aceptarTerminos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="login" min="-2" pref="130" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="login" min="-2" pref="108" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -229,11 +233,6 @@
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="login">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginActionPerformed"/>
               </Events>
