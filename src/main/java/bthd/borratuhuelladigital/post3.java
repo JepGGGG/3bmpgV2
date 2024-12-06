@@ -5,6 +5,10 @@
 package bthd.borratuhuelladigital;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 /**
  *
  * @author jaxt3
@@ -21,6 +25,18 @@ public class post3 extends javax.swing.JFrame {
         setLocationRelativeTo(null); // Centra el JFrame
         // Aplica la forma de bordes redondeados
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
+        try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/BotonSijframe.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        siContinuar.getWidth(),
+        siContinuar.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    siContinuar.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen: " + e.getMessage());
+}
     }
     
     @Override
@@ -54,8 +70,6 @@ public class post3 extends javax.swing.JFrame {
 
         siContinuar.setBackground(new java.awt.Color(241, 44, 41));
         siContinuar.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siContinuar.setForeground(new java.awt.Color(0, 0, 0));
-        siContinuar.setText("SI");
         siContinuar.setToolTipText("");
         siContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +81,6 @@ public class post3 extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("OCR A Extended", 0, 22)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
         jTextArea1.setText("Lo que posteas habla de ti a los\ndemás.");
@@ -79,22 +92,22 @@ public class post3 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(siContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 317, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(siContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(siContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(siContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

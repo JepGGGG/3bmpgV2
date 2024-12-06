@@ -225,7 +225,7 @@ try {
 
         jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(0, 0, 470, 800);
+        jLabel5.setBounds(-20, 0, 490, 800);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

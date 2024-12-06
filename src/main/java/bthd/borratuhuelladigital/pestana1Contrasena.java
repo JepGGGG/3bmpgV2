@@ -5,6 +5,10 @@
 package bthd.borratuhuelladigital;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 /**
  *
  * @author jaxt3
@@ -22,7 +26,30 @@ public class pestana1Contrasena extends javax.swing.JFrame {
         // Aplica la forma de bordes redondeados
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
         jTextArea1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-
+        try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/BotonSijframe.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        siContrasena.getWidth(),
+        siContrasena.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    siContrasena.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen: " + e.getMessage());
+}
+   try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/BotonNojframe.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        noContrasena.getWidth(),
+        noContrasena.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    noContrasena.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen: " + e.getMessage());
+}
     }
     
     @Override
@@ -57,8 +84,6 @@ public class pestana1Contrasena extends javax.swing.JFrame {
 
         siContrasena.setBackground(new java.awt.Color(241, 44, 41));
         siContrasena.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siContrasena.setForeground(new java.awt.Color(0, 0, 0));
-        siContrasena.setText("SI");
         siContrasena.setToolTipText("");
         siContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,8 +93,6 @@ public class pestana1Contrasena extends javax.swing.JFrame {
 
         noContrasena.setBackground(new java.awt.Color(241, 44, 41));
         noContrasena.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        noContrasena.setForeground(new java.awt.Color(0, 0, 0));
-        noContrasena.setText("NO");
         noContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 noContrasenaActionPerformed(evt);
@@ -80,7 +103,6 @@ public class pestana1Contrasena extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
         jTextArea1.setText("¿Crees que es una contraseña\nsegura?");
@@ -94,13 +116,13 @@ public class pestana1Contrasena extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
-                .addComponent(siContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
-                .addComponent(noContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(siContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(noContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -108,10 +130,10 @@ public class pestana1Contrasena extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(noContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(siContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(noContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(siContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
 

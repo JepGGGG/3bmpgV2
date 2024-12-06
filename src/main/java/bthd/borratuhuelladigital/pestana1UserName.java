@@ -5,6 +5,10 @@
 package bthd.borratuhuelladigital;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 /**
  *
  * @author jaxt3
@@ -20,7 +24,19 @@ public class pestana1UserName extends javax.swing.JFrame {
         setSize(475,163); // Tamaño del JFrame
         setLocationRelativeTo(null); // Centra el JFrame
         // Aplica la forma de bordes redondeados
-        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/BotonAceptarjframe.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        siAfecta.getWidth(),
+        siAfecta.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    siAfecta.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen: " + e.getMessage());
+}
+        
     }
     
     @Override
@@ -54,7 +70,6 @@ public class pestana1UserName extends javax.swing.JFrame {
 
         siAfecta.setBackground(new java.awt.Color(241, 44, 41));
         siAfecta.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siAfecta.setText("ACEPTAR");
         siAfecta.setToolTipText("");
         siAfecta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +81,6 @@ public class pestana1UserName extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
         jTextArea1.setText("Tu correo registrado deja una \nmarca permanente");
@@ -78,22 +92,22 @@ public class pestana1UserName extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(siAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(siAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(siAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(siAfecta, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

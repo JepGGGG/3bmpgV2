@@ -5,6 +5,10 @@
 package bthd.borratuhuelladigital;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 /**
  *
  * @author jaxt3
@@ -22,7 +26,18 @@ public class pestana1Correo extends javax.swing.JFrame {
         // Aplica la forma de bordes redondeados
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 50, 50));
         jTextArea1.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-
+try {
+    BufferedImage bufferedImage = ImageIO.read(getClass().getResource("/images/BotonAceptarjframe.png"));
+    ImageIcon imageIcon = new ImageIcon(bufferedImage);
+    Image scaledImage = imageIcon.getImage().getScaledInstance(
+        siExponer.getWidth(),
+        siExponer.getHeight(),
+        Image.SCALE_SMOOTH
+    );
+    siExponer.setIcon(new ImageIcon(scaledImage));
+} catch (IOException | NullPointerException e) {
+    System.err.println("Error al cargar la imagen: " + e.getMessage());
+}
     }
     
     @Override
@@ -56,7 +71,6 @@ public class pestana1Correo extends javax.swing.JFrame {
 
         siExponer.setBackground(new java.awt.Color(241, 44, 41));
         siExponer.setFont(new java.awt.Font("Microsoft YaHei UI", 0, 18)); // NOI18N
-        siExponer.setText("ACEPTAR");
         siExponer.setToolTipText("");
         siExponer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +82,6 @@ public class pestana1Correo extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(2);
         jTextArea1.setTabSize(0);
         jTextArea1.setText("Tu nombre de usuario es tu \nidentidad digital.");
@@ -85,8 +98,8 @@ public class pestana1Correo extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(175, 175, 175)
-                .addComponent(siExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(118, 118, 118)
+                .addComponent(siExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -94,9 +107,9 @@ public class pestana1Correo extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(siExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(siExponer, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
